@@ -1,0 +1,16 @@
+{
+    "name": "GameJam2022.JekyllHyde.Service.Interface",
+    "rootNamespace": "",
+    "references": [
+        "GUID:4e8a0a88bfacdf447bfe27d1aa4f932f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
