@@ -15,11 +15,6 @@ namespace GameJam2022.JekyllHyde.Controller
 
         private Action _onMove { get; set; }
         
-        private void Start()
-        {
-            
-        }
-
         private void Update()
         {
             if(Enabled)
@@ -27,6 +22,7 @@ namespace GameJam2022.JekyllHyde.Controller
 
             if(Input.GetAxis("Horizontal") != 0f)
                 _onMove?.Invoke();
+            
         }
     }
 }
