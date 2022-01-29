@@ -9,16 +9,24 @@ namespace GameJam2022.JekyllHyde.Scene
 {
     public class GameplayScene : MonoBehaviour
     {
-        [field: SerializeField] private PlayerController Player { get; set; }
+        [field: SerializeField] private PlayerController PlayerController { get; set; }
         [field: SerializeField] private KeyboardController KeyboardController { get; set; }
-
+        [field: SerializeField] private Camera MainCamera { get; set; }
         private IGameplayService GameplayService { get; set; }
+        
         private void Start()
         {
             GameplayService = new GameplayService();
-            Player.Init(GameplayService.Player);
             
-            KeyboardController.OnMove += Player.Move;
+            PlayerController.Init(GameplayService.Player);
+            MainCamera.transform.SetParent(PlayerController.transform);
+            
+            KeyboardController.OnMove += PlayerController.Move;
+        }
+
+        private void OnDestroy()
+        {
+            KeyboardController.OnMove -= PlayerController.Move;
         }
     }
 }

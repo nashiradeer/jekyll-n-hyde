@@ -1,4 +1,5 @@
 using System;
+using GameJam2022.JekyllHyde.Controller.Player;
 using UnityEngine;
 
 namespace GameJam2022.JekyllHyde.Controller
@@ -22,7 +23,7 @@ namespace GameJam2022.JekyllHyde.Controller
 
             if(Input.GetAxis("Horizontal") != 0f)
                 _onMove?.Invoke();
-            
         }
+
     }
 }

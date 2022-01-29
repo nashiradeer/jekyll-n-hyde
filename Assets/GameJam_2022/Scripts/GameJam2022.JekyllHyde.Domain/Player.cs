@@ -6,33 +6,33 @@ namespace GameJam2022.JekyllHyde.Domain
     public class Player : IPlayer
     {
         public PlayerOrientation Orientation { get; set; }
-        private float currentDirection { get; set; }
+        private float CurrentDirection { get; set; }
 
         public Player(PlayerOrientation orientation)
         {
             Orientation = orientation;
-            currentDirection = 1;
+            CurrentDirection = 1;
         }
         
         public bool ChangeDirection(float direction)
         {
-            Debug.Log($"current: {currentDirection} | new: {direction} - current orientation: {Orientation}");
+            Debug.Log($"current: {CurrentDirection} | new: {direction} - current orientation: {Orientation}");
             
-            if (currentDirection < 0 && direction > 0)
+            if (CurrentDirection < 0 && direction > 0)
             {
-                currentDirection = direction;
+                CurrentDirection = direction;
                 Orientation = PlayerOrientation.Right;
                 return true;
             }
 
-            if (currentDirection > 0 && direction < 0)
+            if (CurrentDirection > 0 && direction < 0)
             {
-                currentDirection = direction;
+                CurrentDirection = direction;
                 Orientation = PlayerOrientation.Left;
                 return true;
             }
 
-            currentDirection = direction;
+            CurrentDirection = direction;
             
             return false;
         }
