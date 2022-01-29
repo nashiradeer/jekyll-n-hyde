@@ -17,6 +17,12 @@ namespace GameJam2022.JekyllHyde.Controller
         public IInteractable Interactable;
         public IPlayer Player;
 
+        public void Init(IInteractable interactable, IPlayer player)
+        {
+            Interactable = interactable;
+            Player = player;
+        }
+
         public void Interact()
         {
             if (Interactable.Interact())
