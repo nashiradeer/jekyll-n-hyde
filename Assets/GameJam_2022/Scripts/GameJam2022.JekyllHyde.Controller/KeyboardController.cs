@@ -5,10 +5,15 @@ namespace GameJam2022.JekyllHyde.Controller
 {
     public class KeyboardController : MonoBehaviour
     {
-        [field: SerializeField] private PlayerController PlayerController { get; set; }
-        
         private bool Enabled { get; set; }
-        private float Speed = 2.0f;
+        
+        public event Action OnMove
+        {
+            add => _onMove += value;
+            remove => _onMove -= value;
+        }
+
+        private Action _onMove { get; set; }
         
         private void Start()
         {
@@ -20,8 +25,8 @@ namespace GameJam2022.JekyllHyde.Controller
             if(Enabled)
                 return;
 
-            var move = new Vector3(Input.GetAxis("Horizontal"), 0);
-            PlayerController.transform.position += move * (Speed * Time.deltaTime);
+            if(Input.GetAxis("Horizontal") != 0f)
+                _onMove?.Invoke();
         }
     }
 }
