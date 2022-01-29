@@ -4,13 +4,13 @@ namespace GameJam2022.JekyllHyde.Domain.Interface
     {
         bool[] Items { get; }
 
-        bool Hidden { get; set; }
-
-        bool ToggleHide();
+        bool IsHidden { get; }
 
         PlayerOrientation Orientation { get; }
 
         bool ChangeDirection(float direction);
+
+        bool ChangeHide(bool hide);
     }
 
     public enum PlayerOrientation
