@@ -2,6 +2,7 @@
     "name": "GameJam2022.JekyllHyde.Scene",
     "rootNamespace": "",
     "references": [
+        "GUID:3b0d8c2f0f40d0b4fb09638bc2c35d74",
         "GUID:ca317205b3b941247863b2166ddbc232",
         "GUID:a2f198581d6952f47bad1482895f006f",
         "GUID:9aa778d6cc363f74dbe0ade1590bf486",
