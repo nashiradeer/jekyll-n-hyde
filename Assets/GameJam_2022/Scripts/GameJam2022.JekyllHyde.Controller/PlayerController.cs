@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace GameJam2022.JekyllHyde.Controller

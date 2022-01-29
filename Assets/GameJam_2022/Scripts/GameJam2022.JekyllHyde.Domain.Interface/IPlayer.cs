@@ -4,8 +4,12 @@ using UnityEngine;
 
 namespace GameJam2022.JekyllHyde.Domain.Interface
 {
-    public class IPlayer
+    public interface IPlayer
     {
-        
+        bool[] Items { get; }
+
+        bool Hidden { get; set; }
+
+        bool ToggleHide();
     }
 }
