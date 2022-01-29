@@ -2,6 +2,7 @@
 {
     public interface IInteractable
     {
+        int Identifier { get; }
         bool Interact();
     }
 }
