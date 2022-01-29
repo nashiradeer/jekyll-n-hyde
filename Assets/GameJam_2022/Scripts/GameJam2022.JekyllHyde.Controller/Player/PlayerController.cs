@@ -28,6 +28,11 @@ namespace GameJam2022.JekyllHyde.Controller.Player
             transform.position += move * (Speed * Time.deltaTime);
         }
 
+        public void Hide(bool reversed)
+        {
+            
+        }
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (InteractiveObject == null && collision.tag == "Interactable") InteractiveObject = collision;
