@@ -18,6 +18,7 @@ namespace GameJam2022.JekyllHyde.Controller.Player
 
         public void Move()
         {
+            if (Player.IsHidden) return;
             var axis = Input.GetAxis("Horizontal");
             if (Player.ChangeDirection(axis))
             {
@@ -30,7 +31,7 @@ namespace GameJam2022.JekyllHyde.Controller.Player
 
         public void Hide(bool isHide)
         {
-            _ = Player.ChangeHide(isHide);
+            Player.ChangeHide(isHide);
             //TODO: Travar o movimento do jogador caso Player.IsHidden for true.
             PlayerSprite.Hide(Player);
         }
