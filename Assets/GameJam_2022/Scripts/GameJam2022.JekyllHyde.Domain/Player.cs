@@ -6,7 +6,7 @@ namespace GameJam2022.JekyllHyde.Domain
 {
     public class Player : IPlayer
     {
-        public bool[] Items { get; protected set; } = new bool[3];
+        public bool[] Items { get; protected set; }
         public bool IsHidden { get; private set; }
         public bool CanHide { get; set; }
         public PlayerOrientation Orientation { get; set; }
@@ -16,6 +16,7 @@ namespace GameJam2022.JekyllHyde.Domain
         {
             Orientation = orientation;
             CurrentDirection = 1;
+            Items = new bool[5];
         }
         
         public bool ChangeDirection(float direction)
