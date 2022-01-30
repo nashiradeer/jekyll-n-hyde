@@ -33,7 +33,6 @@ namespace GameJam2022.JekyllHyde.Controller.Player
         public void Hide(bool isHide)
         {
             Player.ChangeHide(isHide);
-            //TODO: Travar o movimento do jogador caso Player.IsHidden for true.
             PlayerSprite.Hide(Player);
         }
 
