@@ -9,5 +9,10 @@ namespace GameJam2022.JekyllHyde.Util
         {
             return new Player(playerOrientation);
         }
+
+        public static IInteractable CreateGettableItem(int itemId)
+        {
+            return new GettableItem(itemId);
+        }
     }
 }

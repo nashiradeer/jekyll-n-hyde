@@ -1,4 +1,3 @@
-using System;
 using DG.Tweening;
 using GameJam2022.JekyllHyde.Domain.Interface;
 using UnityEngine;
@@ -16,6 +15,11 @@ namespace GameJam2022.JekyllHyde.Controller.Player
             PlayerSprite.transform.DORotate(endValue, 0.5f);
         }
 
+        public void Hide(IPlayer player)
+        {
+            PlayerAnimator.SetBool("Escondido", player.IsHidden);
+        }
+
         private void Update()
         {
             if (Input.GetAxis("Horizontal") != 0)
@@ -25,7 +29,7 @@ namespace GameJam2022.JekyllHyde.Controller.Player
             }
 
             PlayerAnimator.speed = 0;
-            PlayerAnimator.Rebind();
+            if (!PlayerAnimator.GetBool("Escondido")) PlayerAnimator.Rebind();
         }
     }
 }

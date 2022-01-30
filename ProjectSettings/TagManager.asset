@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GameManager
   - SceneManager
+  - Hideable
   layers:
   - Default
   - TransparentFX

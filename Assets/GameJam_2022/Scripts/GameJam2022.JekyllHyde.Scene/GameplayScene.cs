@@ -26,11 +26,15 @@ namespace GameJam2022.JekyllHyde.Scene
             MainCamera.transform.SetParent(PlayerController.transform);
             
             KeyboardController.OnMove += PlayerController.Move;
+            KeyboardController.OnHide += PlayerController.Hide;
+            KeyboardController.OnInteract += PlayerController.Interact;
         }
 
         private void OnDestroy()
         {
             KeyboardController.OnMove -= PlayerController.Move;
+            KeyboardController.OnHide -= PlayerController.Hide;
+            KeyboardController.OnInteract -= PlayerController.Interact;
         }
     }
 }
