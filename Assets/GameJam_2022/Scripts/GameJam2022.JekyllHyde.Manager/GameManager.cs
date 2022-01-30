@@ -1,26 +1,25 @@
 using System;
+using GameJam2022.JekyllHyde.Manager.Interface;
 using GameJam2022.JekyllHyde.Service;
 using GameJam2022.JekyllHyde.Service.Interface;
 using UnityEngine;
 
 namespace GameJam2022.JekyllHyde.Manager
 {
-    public class GameManager : MonoBehaviour
+    public class GameManager : MonoBehaviour, IGameManager
     {
-        [field: SerializeField] private SceneManager SceneManager { get; set; }
         public IGameplayService GameplayService { get; set; }
         
-
-        private void Awake()
+        public void Init()
         {
             DontDestroyOnLoad(this);
 
-            GameplayService = new GameplayService();
+            InicializarServicos();
         }
 
-        private void Start()
+        private void InicializarServicos()
         {
-            SceneManager.LoadScene("GamePlay");
+            GameplayService = new GameplayService();
         }
     }
 }

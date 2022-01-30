@@ -1,7 +1,9 @@
 {
     "name": "GameJam2022.JekyllHyde.Manager.Interface",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:ca317205b3b941247863b2166ddbc232"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

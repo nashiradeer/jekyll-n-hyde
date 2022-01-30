@@ -5,15 +5,20 @@
         "GUID:3b0d8c2f0f40d0b4fb09638bc2c35d74",
         "GUID:ca317205b3b941247863b2166ddbc232",
         "GUID:0c6bd340d3d88644d90ad5e30f7d2f45",
+        "GUID:a2f198581d6952f47bad1482895f006f",
         "GUID:9aa778d6cc363f74dbe0ade1590bf486",
         "GUID:41a824c6c4d2cc44d9be9cd91e1cc262",
-        "GUID:0cdee705eb8bed242800996c41c40587"
+        "GUID:0cdee705eb8bed242800996c41c40587",
+        "GUID:0520f27a8b446ca4eb6ef95998af8eef"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": true,
-    "precompiledReferences": [],
+    "precompiledReferences": [
+        "DOTween.dll",
+        "DOTweenEditor.dll"
+    ],
     "autoReferenced": false,
     "defineConstraints": [],
     "versionDefines": [],
