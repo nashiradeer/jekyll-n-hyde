@@ -51,6 +51,8 @@ namespace GameJam2022.JekyllHyde.Controller.Enemy
         // Calculos de distancia do player
         private void FixedUpdate()
         {
+            if (Enemy.CurrentDirection == 0) return;
+
             float distance = PlayerPos.position.x - gameObject.transform.position.x;
 
             if (distance < 0)
@@ -60,8 +62,8 @@ namespace GameJam2022.JekyllHyde.Controller.Enemy
             {
                 _onKillPlayer?.Invoke();
 
-                // TESTONLY
-                Destroy(gameObject);
+                Enemy.CurrentDirection = 0;
+                EnemySprite.Moving = false;
 
                 return;
             }
@@ -76,6 +78,8 @@ namespace GameJam2022.JekyllHyde.Controller.Enemy
         // Movimentação do personagem no Update para ser consistente com a do player
         private void Update()
         {
+            if (Enemy.CurrentDirection == 0) return;
+
             float currentSpeed;
             if (Enemy.Chasing)
                 currentSpeed = RunSpeed;
