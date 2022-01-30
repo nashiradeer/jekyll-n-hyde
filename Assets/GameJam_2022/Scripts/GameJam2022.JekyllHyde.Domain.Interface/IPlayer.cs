@@ -13,6 +13,8 @@ namespace GameJam2022.JekyllHyde.Domain.Interface
         bool ChangeDirection(float direction);
 
         bool ChangeHide(bool hide);
+
+        bool PickupItem(int itemId);
     }
 
     public enum PlayerOrientation

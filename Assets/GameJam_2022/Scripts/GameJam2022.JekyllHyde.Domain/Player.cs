@@ -51,5 +51,19 @@ namespace GameJam2022.JekyllHyde.Domain
 
             return true;
         }
+
+        public bool PickupItem(int itemId)
+        {
+            try
+            {
+                Items[itemId] = true;
+                return true;
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                Debug.LogException(e);
+                return false;
+            }
+        }
     }
 }
