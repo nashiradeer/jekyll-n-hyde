@@ -17,11 +17,9 @@ namespace GameJam2022.JekyllHyde.Controller
 
         public void Interact()
         {
-            if (Interactable.Interact())
+            if (Interactable.Interact(Player))
             {
-                Player.Items[Interactable.Identifier] = true;
-
-                Destroy(gameObject);
+                if (Interactable is IGettable) Destroy(gameObject);
             }
         }
     }

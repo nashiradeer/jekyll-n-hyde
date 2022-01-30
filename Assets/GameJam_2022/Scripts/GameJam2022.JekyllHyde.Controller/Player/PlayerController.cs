@@ -9,7 +9,7 @@ namespace GameJam2022.JekyllHyde.Controller.Player
         
         private IPlayer Player { get; set; }
         private float Speed = 2.0f;
-        private Collider2D InteractiveObject = null;
+        private IInteractable InteractiveObject = null;
 
         public void Init(IPlayer player)
         {
@@ -37,15 +37,22 @@ namespace GameJam2022.JekyllHyde.Controller.Player
             PlayerSprite.Hide(Player);
         }
 
+        public void Interact()
+        {
+            if (InteractiveObject != null) InteractiveObject.Interact(Player);
+        }
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (InteractiveObject == null && collision.tag == "Interactable") InteractiveObject = collision;
+            IInteractable interactable = collision.GetComponent<IInteractable>();
+            if (InteractiveObject == null && interactable != null) InteractiveObject = interactable;
+
             if (collision.tag == "Hideable") Player.CanHide = true;
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (InteractiveObject == collision) InteractiveObject = null;
+            if (InteractiveObject == collision.GetComponent<IInteractable>()) InteractiveObject = null;
             if (collision.tag == "Hideable") Player.CanHide = false;
         }
     }
