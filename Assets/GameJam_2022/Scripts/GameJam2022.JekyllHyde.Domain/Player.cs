@@ -46,10 +46,8 @@ namespace GameJam2022.JekyllHyde.Domain
             Debug.Log($"Player Hide: current {IsHidden} | new {hide} - can hide: {CanHide}");
             if (hide == IsHidden) return false;
 
-            if (!IsHidden && CanHide)
-                IsHidden = true;
-            else
-                IsHidden = false;
+            if (!IsHidden && CanHide) IsHidden = true;
+            else IsHidden = false;
 
             return true;
         }
