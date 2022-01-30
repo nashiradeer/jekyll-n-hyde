@@ -23,6 +23,7 @@ namespace GameJam2022.JekyllHyde.Scene
             
             KeyboardController.OnMove += PlayerController.Move;
             KeyboardController.OnHide += PlayerController.Hide;
+            KeyboardController.OnInteract += PlayerController.Interact;
         }
 
         private void OnDestroy()
