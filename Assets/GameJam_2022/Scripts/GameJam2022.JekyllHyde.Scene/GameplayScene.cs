@@ -29,6 +29,8 @@ namespace GameJam2022.JekyllHyde.Scene
         private void OnDestroy()
         {
             KeyboardController.OnMove -= PlayerController.Move;
+            KeyboardController.OnHide -= PlayerController.Hide;
+            KeyboardController.OnInteract -= PlayerController.Interact;
         }
     }
 }
