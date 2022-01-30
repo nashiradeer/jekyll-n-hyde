@@ -30,7 +30,6 @@ namespace GameJam2022.JekyllHyde.Controller.Player
             }
 
             PlayerAnimator.speed = 0;
-            PlayerAnimator.Rebind();
         }
     }
 }
