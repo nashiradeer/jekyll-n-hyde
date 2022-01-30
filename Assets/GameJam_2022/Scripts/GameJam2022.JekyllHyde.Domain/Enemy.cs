@@ -5,7 +5,7 @@ namespace GameJam2022.JekyllHyde.Domain
     public class Enemy : IEnemy
     {
         public PlayerOrientation Orientation { get; private set; }
-        public int CurrentDirection { get; private set; }
+        public int CurrentDirection { get; set; }
         public bool Chasing { get; private set; }
         private float ChaseDistance = 6f;
 
