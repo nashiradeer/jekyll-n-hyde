@@ -20,7 +20,7 @@ namespace GameJam2022.JekyllHyde.Controller.Enemy
 
         public void ChaseAnimation(bool isChasing)
         {
-            if (isChasing)
+            if (!isChasing)
                 AnimatorSpeed = 1f;
             else
                 AnimatorSpeed = 3f;
