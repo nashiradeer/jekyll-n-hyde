@@ -57,6 +57,7 @@ namespace GameJam2022.JekyllHyde.Domain
             try
             {
                 Items[itemId] = true;
+                Debug.Log($"item picked: {itemId}");
                 return true;
             }
             catch (IndexOutOfRangeException e)
