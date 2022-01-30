@@ -6,14 +6,6 @@ namespace GameJam2022.JekyllHyde.Controller
 {
     public class InteractiveController : MonoBehaviour
     {
-        public event Action<bool> OnHideStatusChange
-        {
-            add => _onHideStatusChange += value;
-            remove => _onHideStatusChange -= value;
-        }
-
-        private Action<bool> _onHideStatusChange { get; set; }
-
         public IInteractable Interactable;
         public IPlayer Player;
 
@@ -27,16 +19,9 @@ namespace GameJam2022.JekyllHyde.Controller
         {
             if (Interactable.Interact())
             {
-                if (Interactable is IGetable)
-                {
-                    Player.Items[(Interactable as IGetable).Identifier] = true;
+                Player.Items[Interactable.Identifier] = true;
 
-                    Destroy(gameObject);
-                }
-                else
-                {
-                    if (Player.ToggleHide()) _onHideStatusChange?.Invoke(Player.Hidden);
-                }
+                Destroy(gameObject);
             }
         }
     }

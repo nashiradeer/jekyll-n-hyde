@@ -15,7 +15,15 @@ namespace GameJam2022.JekyllHyde.Controller
         }
 
         private Action _onMove { get; set; }
-        
+
+        public event Action<bool> OnHide
+        {
+            add => _onHide += value;
+            remove => _onHide -= value;
+        }
+
+        private Action<bool> _onHide { get; set; }
+
         private void Update()
         {
             if(Enabled)
@@ -23,6 +31,11 @@ namespace GameJam2022.JekyllHyde.Controller
 
             if(Input.GetAxis("Horizontal") != 0f)
                 _onMove?.Invoke();
+
+            if (Input.GetKeyDown(KeyCode.DownArrow) | Input.GetKeyDown(KeyCode.S))
+                _onHide?.Invoke(true);
+            else if (Input.GetKeyUp(KeyCode.DownArrow) | Input.GetKeyUp(KeyCode.S))
+                _onHide?.Invoke(false);
         }
 
     }

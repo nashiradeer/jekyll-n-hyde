@@ -16,6 +16,11 @@ namespace GameJam2022.JekyllHyde.Controller.Player
             PlayerSprite.transform.DORotate(endValue, 0.5f);
         }
 
+        public void Hide(IPlayer player)
+        {
+            PlayerAnimator.SetBool("Escondido", player.IsHidden);
+        }
+
         private void Update()
         {
             if (Input.GetAxis("Horizontal") != 0)
