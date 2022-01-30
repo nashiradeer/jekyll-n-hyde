@@ -1,9 +1,9 @@
-using System;
 using GameJam2022.JekyllHyde.Controller;
 using GameJam2022.JekyllHyde.Controller.Enemy;
 using GameJam2022.JekyllHyde.Controller.Player;
 using GameJam2022.JekyllHyde.Manager;
 using GameJam2022.JekyllHyde.Manager.Interface;
+using GameJam2022.JekyllHyde.Util;
 using UnityEngine;
 
 namespace GameJam2022.JekyllHyde.Scene
@@ -27,7 +27,7 @@ namespace GameJam2022.JekyllHyde.Scene
         private void Start()
         {
             PlayerController.Init(GameManager.GameplayService.Player);
-            EnemyController.Init(GameManager.GameplayService.Enemy, GameManager.GameplayService.Player, PlayerController.transform, 30);
+            EnemyController.Init(Factory.CreateEnemy(Domain.Interface.PlayerOrientation.Left), GameManager.GameplayService.Player, PlayerController.transform, 30);
             MainCamera.transform.SetParent(PlayerController.transform);
             
             KeyboardController.OnMove += PlayerController.Move;
