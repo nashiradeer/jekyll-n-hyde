@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/GameJam_2022/Scenes/Gameplay.unity
+    path: Assets/GameJam_2022/Scenes/Launch.unity
+    guid: 8cb379811e5a96145bf4e49e7f0c95ef
+  - enabled: 1
+    path: Assets/GameJam_2022/Scenes/Menu.unity
+    guid: b776515340b7106479fec7e3586e448f
+  - enabled: 1
+    path: Assets/GameJam_2022/Scenes/GamePlay.unity
     guid: 3efcb5b7a5e810a46a1f768e306f5d85
   m_configObjects: {}
