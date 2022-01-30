@@ -1,5 +1,6 @@
 using System;
 using GameJam2022.JekyllHyde.Controller;
+using GameJam2022.JekyllHyde.Controller.Enemy;
 using GameJam2022.JekyllHyde.Controller.Player;
 using GameJam2022.JekyllHyde.Manager;
 using GameJam2022.JekyllHyde.Manager.Interface;
@@ -10,6 +11,7 @@ namespace GameJam2022.JekyllHyde.Scene
     public class GameplayScene : MonoBehaviour
     {
         [field: SerializeField] private PlayerController PlayerController { get; set; }
+        [field: SerializeField] private EnemyController EnemyController { get; set; }
         [field: SerializeField] private KeyboardController KeyboardController { get; set; }
         [field: SerializeField] private Camera MainCamera { get; set; }
         
@@ -22,7 +24,9 @@ namespace GameJam2022.JekyllHyde.Scene
         
         private void Start()
         {
+            GameManager.Init();
             PlayerController.Init(GameManager.GameplayService.Player);
+            EnemyController.Init(GameManager.GameplayService.Enemy, GameManager.GameplayService.Player, PlayerController.transform, 30);
             MainCamera.transform.SetParent(PlayerController.transform);
             
             KeyboardController.OnMove += PlayerController.Move;

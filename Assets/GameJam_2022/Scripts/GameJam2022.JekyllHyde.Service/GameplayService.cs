@@ -7,10 +7,12 @@ namespace GameJam2022.JekyllHyde.Service
     public class GameplayService : IGameplayService
     {
         public IPlayer Player { get; set; }
+        public IEnemy Enemy { get; set; }
         
         public GameplayService()
         {
             Player = Factory.CreatePlayer(PlayerOrientation.Right);
+            Enemy = Factory.CreateEnemy(PlayerOrientation.Left);
         }
     }
 }
