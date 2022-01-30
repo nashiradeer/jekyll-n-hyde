@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GameJam_2022/Scenes/GamePlay.unity
     guid: 3efcb5b7a5e810a46a1f768e306f5d85
+  - enabled: 1
+    path: Assets/GameJam_2022/Scenes/GameOver.unity
+    guid: bbdc694b4eb12e24c8184df8fcc7adea
   m_configObjects: {}
