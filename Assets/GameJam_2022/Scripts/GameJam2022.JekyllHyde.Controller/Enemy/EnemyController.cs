@@ -1,4 +1,5 @@
-﻿using GameJam2022.JekyllHyde.Domain.Interface;
+﻿using GameJam2022.JekyllHyde.Controller;
+using GameJam2022.JekyllHyde.Domain.Interface;
 using System;
 using UnityEngine;
 
@@ -6,9 +7,7 @@ namespace GameJam2022.JekyllHyde.Controller.Enemy
 {
     public class EnemyController : MonoBehaviour
     {
-        public float KillDistance = 0f;
-        public float Speed = 2f;
-        public float RunSpeed = 3f;
+        [field: SerializeField] private EnemyVfx EnemySprite { get; set; }
 
         public event Action OnKillPlayer
         {
@@ -26,16 +25,23 @@ namespace GameJam2022.JekyllHyde.Controller.Enemy
 
         private Action<bool> _onChasingUpdate { get; set; }
 
-        private Transform PlayerPos;
-        public IPlayer Player;
-        private IEnemy Enemy;
-        public float RoomLimit;
 
-        public void Init(IEnemy enemy, IPlayer player, Transform playerPos)
+        private IEnemy Enemy;
+        private IPlayer Player;
+        private float RoomSize;
+        private Transform PlayerPos;
+
+        private float KillDistance = 2f;
+        private float Speed = 2f;
+        private float RunSpeed = 3f;
+        private float AlreadyMoved = 0f;
+
+        public void Init(IEnemy enemy, IPlayer player, Transform playerPos, float roomSize)
         {
             PlayerPos = playerPos;
             Enemy = enemy;
             Player = player;
+            RoomSize = roomSize;
         }
 
         // Calculos de distancia do player
@@ -66,8 +72,13 @@ namespace GameJam2022.JekyllHyde.Controller.Enemy
                 currentSpeed = Speed;
 
             Vector3 move = new Vector3(Enemy.CurrentDirection, 0);
-            transform.position += move * (currentSpeed * Time.deltaTime);
+            Vector3 totalMove = move * (currentSpeed * Time.deltaTime);
 
+            transform.position += totalMove;
+
+            AlreadyMoved += (totalMove.x > 0) ? totalMove.x : -totalMove.x;
+
+            if (AlreadyMoved > RoomSize) Destroy(gameObject);
         }
     }
 }
