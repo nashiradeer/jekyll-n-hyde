@@ -1,4 +1,3 @@
-using System;
 using DG.Tweening;
 using GameJam2022.JekyllHyde.Domain.Interface;
 using UnityEngine;
@@ -30,6 +29,7 @@ namespace GameJam2022.JekyllHyde.Controller.Player
             }
 
             PlayerAnimator.speed = 0;
+            if (!PlayerAnimator.GetBool("Escondido")) PlayerAnimator.Rebind();
         }
     }
 }
