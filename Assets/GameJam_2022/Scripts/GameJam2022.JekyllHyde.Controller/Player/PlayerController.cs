@@ -9,7 +9,6 @@ namespace GameJam2022.JekyllHyde.Controller.Player
         
         private IPlayer Player { get; set; }
         private float Speed = 2.0f;
-        private bool CanHide = false;
         private Collider2D InteractiveObject = null;
 
         public void Init(IPlayer player)
@@ -29,21 +28,23 @@ namespace GameJam2022.JekyllHyde.Controller.Player
             transform.position += move * (Speed * Time.deltaTime);
         }
 
-        public void Hide(bool reversed)
+        public void Hide(bool isHide)
         {
-            
+            _ = Player.ChangeHide(isHide);
+            //TODO: Travar o movimento do jogador caso Player.IsHidden for true.
+            PlayerSprite.Hide(Player);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (InteractiveObject == null && collision.tag == "Interactable") InteractiveObject = collision;
-            if (collision.tag == "Hideable") CanHide = true;
+            if (collision.tag == "Hideable") Player.CanHide = true;
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
             if (InteractiveObject == collision) InteractiveObject = null;
-            if (collision.tag == "Hideable") CanHide = false;
+            if (collision.tag == "Hideable") Player.CanHide = false;
         }
     }
 }

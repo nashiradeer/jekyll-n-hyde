@@ -8,6 +8,7 @@ namespace GameJam2022.JekyllHyde.Domain
     {
         public bool[] Items { get; protected set; } = new bool[3];
         public bool IsHidden { get; private set; }
+        public bool CanHide { get; set; }
         public PlayerOrientation Orientation { get; set; }
         private float CurrentDirection { get; set; }
 
@@ -42,8 +43,14 @@ namespace GameJam2022.JekyllHyde.Domain
 
         public bool ChangeHide(bool hide)
         {
-            if (hide == Hidden) return false;
-            Hidden = hide;
+            Debug.Log($"Player Hide: current {IsHidden} | new {hide}");
+            if (hide == IsHidden) return false;
+
+            if (!IsHidden && CanHide)
+                IsHidden = true;
+            else
+                IsHidden = false;
+
             return true;
         }
     }

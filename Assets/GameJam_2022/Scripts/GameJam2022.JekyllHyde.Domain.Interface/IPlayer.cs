@@ -6,6 +6,8 @@ namespace GameJam2022.JekyllHyde.Domain.Interface
 
         bool IsHidden { get; }
 
+        bool CanHide { get; set; }
+
         PlayerOrientation Orientation { get; }
 
         bool ChangeDirection(float direction);
