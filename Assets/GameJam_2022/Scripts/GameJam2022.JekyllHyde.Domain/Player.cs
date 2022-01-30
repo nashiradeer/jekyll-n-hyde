@@ -58,6 +58,7 @@ namespace GameJam2022.JekyllHyde.Domain
             {
                 Items[itemId] = true;
                 Debug.Log($"item picked: {itemId}");
+                Debug.Log($"inventory updated ({string.Join(",", Items)})");
                 return true;
             }
             catch (IndexOutOfRangeException e)
