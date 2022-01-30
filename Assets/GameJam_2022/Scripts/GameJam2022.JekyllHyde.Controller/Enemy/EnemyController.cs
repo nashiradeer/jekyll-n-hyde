@@ -33,13 +33,17 @@ namespace GameJam2022.JekyllHyde.Controller.Enemy
 
         private float KillDistance = 2f;
         private float Speed = 2f;
-        private float RunSpeed = 3f;
+        private float RunSpeed = 6f;
         private float AlreadyMoved = 0f;
 
         public void Init(IEnemy enemy, IPlayer player, Transform playerPos, float roomSize)
         {
-            PlayerPos = playerPos;
             Enemy = enemy;
+
+            if (enemy.Orientation != PlayerOrientation.Right)
+                EnemySprite.Rotate(enemy);
+
+            PlayerPos = playerPos;
             Player = player;
             RoomSize = roomSize;
         }
@@ -55,10 +59,14 @@ namespace GameJam2022.JekyllHyde.Controller.Enemy
             if (!Player.IsHidden && distance < KillDistance)
             {
                 _onKillPlayer?.Invoke();
+
+                // TESTONLY
+                Destroy(gameObject);
+
                 return;
             }
 
-            if (Enemy.ChaseUpdate(Player.IsHidden, PlayerPos.position.x, distance))
+            if (Enemy.ChaseUpdate(Player.IsHidden, distance, PlayerPos.position.x, transform.position.x))
                 _onChasingUpdate?.Invoke(Enemy.Chasing);
         }
 
@@ -70,6 +78,9 @@ namespace GameJam2022.JekyllHyde.Controller.Enemy
                 currentSpeed = RunSpeed;
             else
                 currentSpeed = Speed;
+
+            if (Enemy.CurrentDirection != 0)
+                EnemySprite.Moving = true;
 
             Vector3 move = new Vector3(Enemy.CurrentDirection, 0);
             Vector3 totalMove = move * (currentSpeed * Time.deltaTime);

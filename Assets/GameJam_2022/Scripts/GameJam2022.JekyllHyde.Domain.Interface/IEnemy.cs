@@ -5,8 +5,7 @@ namespace GameJam2022.JekyllHyde.Domain.Interface
         PlayerOrientation Orientation { get; }
         int CurrentDirection { get; }
         bool Chasing { get; }
-        float ChaseDistance { get; set; }
 
-        bool ChaseUpdate(bool playerHidden, float playerX, float distance);
+        bool ChaseUpdate(bool playerHidden, float distance, float playerX, float enemyX);
     }
 }
