@@ -18,6 +18,8 @@ namespace GameJam2022.JekyllHyde.Controller.Player
 
         public void Move()
         {
+            if (Player.IsHidden) return;
+
             var axis = Input.GetAxis("Horizontal");
             if (Player.ChangeDirection(axis))
             {
