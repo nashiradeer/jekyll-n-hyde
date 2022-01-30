@@ -16,10 +16,12 @@ namespace GameJam2022.JekyllHyde.Scene
         [field: SerializeField] private Camera MainCamera { get; set; }
         
         private IGameManager GameManager { get; set; }
+        private ISceneManager SceneManager { get; set; }
 
         private void Awake()
         {
             GameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+            SceneManager = GameObject.FindWithTag("SceneManager").GetComponent<SceneManager>();
         }
         
         private void Start()
@@ -31,6 +33,8 @@ namespace GameJam2022.JekyllHyde.Scene
             KeyboardController.OnMove += PlayerController.Move;
             KeyboardController.OnHide += PlayerController.Hide;
             KeyboardController.OnInteract += PlayerController.Interact;
+
+            EnemyController.OnKillPlayer += GameOver;
         }
 
         private void OnDestroy()
@@ -38,6 +42,13 @@ namespace GameJam2022.JekyllHyde.Scene
             KeyboardController.OnMove -= PlayerController.Move;
             KeyboardController.OnHide -= PlayerController.Hide;
             KeyboardController.OnInteract -= PlayerController.Interact;
+
+            EnemyController.OnKillPlayer -= GameOver;
+        }
+
+        public void GameOver()
+        {
+            SceneManager.LoadOverlay("GameOver");
         }
     }
 }
