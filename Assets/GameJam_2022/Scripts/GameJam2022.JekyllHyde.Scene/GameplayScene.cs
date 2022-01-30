@@ -24,7 +24,6 @@ namespace GameJam2022.JekyllHyde.Scene
         
         private void Start()
         {
-            GameManager.Init();
             PlayerController.Init(GameManager.GameplayService.Player);
             EnemyController.Init(GameManager.GameplayService.Enemy, GameManager.GameplayService.Player, PlayerController.transform, 30);
             MainCamera.transform.SetParent(PlayerController.transform);
