@@ -5,6 +5,5 @@ namespace GameJam2022.JekyllHyde.Service.Interface
     public interface IGameplayService : IService
     {
         IPlayer Player { get; }
-        IEnemy Enemy { get; }
     }
 }
