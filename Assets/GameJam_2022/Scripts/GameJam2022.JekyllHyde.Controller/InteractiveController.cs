@@ -7,17 +7,15 @@ namespace GameJam2022.JekyllHyde.Controller
     public class InteractiveController : MonoBehaviour
     {
         public IInteractable Interactable;
-        public IPlayer Player;
 
-        public void Init(IInteractable interactable, IPlayer player)
+        public void Init(IInteractable interactable)
         {
             Interactable = interactable;
-            Player = player;
         }
 
-        public void Interact()
+        public void Interact(IPlayer player)
         {
-            if (Interactable.Interact(Player))
+            if (Interactable.Interact(player))
             {
                 if (Interactable is IGettable) Destroy(gameObject);
             }
