@@ -67,7 +67,10 @@ namespace GameJam2022.JekyllHyde.Controller.Enemy
             }
 
             if (Enemy.ChaseUpdate(Player.IsHidden, distance, PlayerPos.position.x, transform.position.x))
+            {
+                EnemySprite.ChaseAnimation(Enemy.Chasing);
                 _onChasingUpdate?.Invoke(Enemy.Chasing);
+            }
         }
 
         // Movimentação do personagem no Update para ser consistente com a do player
