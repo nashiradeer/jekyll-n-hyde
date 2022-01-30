@@ -32,9 +32,9 @@ namespace GameJam2022.JekyllHyde.Controller
             if(Input.GetAxis("Horizontal") != 0f)
                 _onMove?.Invoke();
 
-            if (Input.GetKeyDown(KeyCode.DownArrow) | Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
                 _onHide?.Invoke(true);
-            else if (Input.GetKeyUp(KeyCode.DownArrow) | Input.GetKeyUp(KeyCode.S))
+            else if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S))
                 _onHide?.Invoke(false);
         }
 
