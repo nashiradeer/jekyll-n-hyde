@@ -2,7 +2,6 @@
 {
     public interface IInteractable
     {
-        int Identifier { get; }
-        bool Interact();
+        bool Interact(IPlayer player);
     }
 }
