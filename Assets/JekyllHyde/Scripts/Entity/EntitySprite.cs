@@ -13,7 +13,11 @@ namespace JekyllHyde.Entity
 
         protected void Start()
         {
-            if (CurrentDirection != EntityDirection.Left) transform.DORotate(new Vector2(0, 180), 1f);
+            if (CurrentDirection != EntityDirection.Left)
+            {
+                transform.Rotate(new Vector2(0, 180));
+                Direction = CurrentDirection;
+            }
         }
 
         protected void Update()
