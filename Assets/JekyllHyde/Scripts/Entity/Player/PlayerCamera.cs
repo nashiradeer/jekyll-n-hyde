@@ -4,23 +4,24 @@ namespace JekyllHyde.Entity.Player
 {
     public class PlayerCamera : MonoBehaviour
     {
-        public Transform CurrentPlayer = null;
+        [field: SerializeField] private Transform Player = null;
+        [field: SerializeField] public float LeftX { get; set; }
+        [field: SerializeField] public float RightX { get; set; }
+        [field: SerializeField] public float CameraY { get; set; }
 
-        void Start()
+        private void FixedUpdate()
         {
-        
-        }
-
-        // Update is called once per frame
-        void FixedUpdate()
-        {
-            if (CurrentPlayer == null)
+            if (LeftX != RightX && Player.position.x > RightX && Player.position.x < LeftX)
             {
-                CurrentPlayer = GameObject.FindGameObjectWithTag("Player").transform;
+                transform.position = new Vector3(Player.position.x, CameraY, transform.position.z);
             }
-            else
+            else if (LeftX != RightX && Player.position.x < RightX)
             {
-                transform.position = new Vector3(CurrentPlayer.position.x, CurrentPlayer.position.y, transform.position.z);
+                transform.position = new Vector3(RightX, CameraY, transform.position.z);
+            }
+            else if (LeftX != RightX && Player.position.x > LeftX)
+            {
+                transform.position = new Vector3(LeftX, CameraY, transform.position.z);
             }
         }
     }
