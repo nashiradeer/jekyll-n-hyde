@@ -26,7 +26,7 @@ namespace JekyllHyde.Entity.Player
         private bool IsInteracting(out bool alternativeKey)
         {
             bool normalKey = Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Return);
-            bool altKey = Input.GetAxisRaw("Vertical") == 1;
+            bool altKey = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);
             if (!normalKey) alternativeKey = altKey;
             else alternativeKey = false;
             return normalKey || altKey;
