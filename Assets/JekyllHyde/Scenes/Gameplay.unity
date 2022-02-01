@@ -782,10 +782,10 @@ MonoBehaviour:
       <Spawns>k__BackingField:
       - <LastRoom>k__BackingField: -1
         <SpawnX>k__BackingField: 0.45
-      - <LastRoom>k__BackingField: 0
-        <SpawnX>k__BackingField: -6.52
+      - <LastRoom>k__BackingField: 2
+        <SpawnX>k__BackingField: -7.45
       - <LastRoom>k__BackingField: 1
-        <SpawnX>k__BackingField: 6.08
+        <SpawnX>k__BackingField: 6.73
   - <World>k__BackingField: {fileID: 3570636459970461033, guid: c1d1ab4548dbdc148838446b927976dd, type: 3}
     <Header>k__BackingField:
       <JekyllY>k__BackingField: -2.26
@@ -794,7 +794,16 @@ MonoBehaviour:
       <CameraLimitLeft>k__BackingField: 8.46
       <Spawns>k__BackingField:
       - <LastRoom>k__BackingField: 0
-        <SpawnX>k__BackingField: 4.86
+        <SpawnX>k__BackingField: 5.51
+  - <World>k__BackingField: {fileID: 3453493049961199148, guid: f69a05368b091024e9ffcd8f5b6f96ca, type: 3}
+    <Header>k__BackingField:
+      <JekyllY>k__BackingField: -2.38
+      <CameraY>k__BackingField: 0
+      <CameraLimitRight>k__BackingField: -0.01
+      <CameraLimitLeft>k__BackingField: 0.01
+      <Spawns>k__BackingField:
+      - <LastRoom>k__BackingField: 0
+        <SpawnX>k__BackingField: -5.58
   <ExposedZones>k__BackingField: []
 --- !u!222 &1897543285
 CanvasRenderer:
