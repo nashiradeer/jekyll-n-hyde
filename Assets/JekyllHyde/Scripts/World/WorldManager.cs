@@ -1,69 +1,77 @@
-using JekyllHyde.Entity;
+using DG.Tweening;
+using JekyllHyde.Entity.Player;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace JekyllHyde.World
 {
     public class WorldManager : MonoBehaviour
     {
+        [field: SerializeField] private Image WorldLoading;
+        [field: SerializeField] private PlayerCamera Camera;
+
         [field: SerializeField] public int InitialWorld { get; set; }
-        [field: SerializeField] public GameObject PlayerPrefab { get; set; }
+        [field: SerializeField] public GameObject Player { get; set; }
         [field: SerializeField] public GameObject HydePrefab { get; set; }
         //[field: SerializeField] public HydeSimulator HydeAi { get; set; } = null;
         [field: SerializeField] public List<WorldManagerElement> Worlds { get; set; }
+        [field: SerializeField] public List<WorldExposedZone> ExposedZones { get; set; }
 
-        private GameObject CurrentPlayer = null;
         private GameObject CurrentHyde = null;
         private WorldManagerElement CurrentWorld = null;
+        private GameObject CurrentWorldObj = null;
+        private Tween FadeIn = null;
 
-        public void LoadWorld(int roomId, EntityDirection playerDirection)
+        public void LoadWorld(int room, int? lastRoom = null, bool unload = true)
         {
-            if (CurrentPlayer != null)
-            {
-                Destroy(CurrentPlayer);
-            }
+            Debug.Log($"WorldManager: Loading room {room} from {lastRoom}. (Unload? {unload})");
+            if (unload) UnloadWorld();
+            WorldLoading.color = new Color(0, 0, 0, 1);
+
+            CurrentWorld = Worlds[room];
+            CurrentWorldObj = Instantiate(CurrentWorld.World, transform);
+
+            Camera.RightX = CurrentWorld.Header.CameraLimitRight;
+            Camera.LeftX = CurrentWorld.Header.CameraLimitLeft;
+            Camera.transform.position = new Vector3(0, 0, -10);
+
+            float x;
+            if (lastRoom == null) x = CurrentWorld.Header.Spawns[0].SpawnX;
+            else x = (from selectRoom in CurrentWorld.Header.Spawns where selectRoom.LastRoom == lastRoom select selectRoom).FirstOrDefault().SpawnX;
+
+            Player.transform.position = new Vector3(x, CurrentWorld.Header.JekyllY);
+
+            // Pass Hyde from Simulator to World if he are in here
+
+            FadeIn = WorldLoading.DOFade(0, 1);
+        }
+
+        private void UnloadWorld()
+        {
+            WorldLoading.color = new Color(0, 0, 0, 0);
+            Tween FadeOut = WorldLoading.DOFade(1, 1);
 
             if (CurrentHyde != null)
             {
                 // Pass Hyde from World to Simulator
             }
 
-            foreach (Transform child in transform)
+            if (CurrentWorldObj != null)
             {
-                Destroy(child);
+                Destroy(CurrentWorldObj);
+                CurrentWorldObj = null;
             }
 
-            CurrentWorld = Worlds[roomId];
-            Instantiate(CurrentWorld.World, transform);
-
-            float x;
-            if (playerDirection == EntityDirection.Left) x = CurrentWorld.Header.JekyllLeft;
-            else x = CurrentWorld.Header.JekyllRight;
-
-            CurrentPlayer = Instantiate(PlayerPrefab, new Vector3(x, CurrentWorld.Header.JekyllY), Quaternion.identity);
-
-            // Pass Hyde from Simulator to World if he are in here
+            if (FadeIn != null) FadeIn.Kill();
+            FadeOut.Kill();
         }
 
         private void Start()
         {
-            LoadWorld(InitialWorld, EntityDirection.Right);
-        }
-
-        private void FixedUpdate()
-        {
-            if (CurrentPlayer != null)
-            {
-                if (CurrentPlayer.transform.position.x > CurrentWorld.Header.JekyllRight)
-                {
-                    LoadWorld(CurrentWorld.Header.RoomRight, EntityDirection.Left);
-                }
-                if (CurrentPlayer.transform.position.x < CurrentWorld.Header.JekyllLeft)
-                {
-                    LoadWorld(CurrentWorld.Header.RoomLeft, EntityDirection.Right);
-                }
-            }
+            LoadWorld(InitialWorld, unload: false);
         }
     }
 
@@ -75,14 +83,26 @@ namespace JekyllHyde.World
 
     [Serializable] public class WorldHeader
     {
-        [field: SerializeField] public bool HasHyde { get; set; }
-        [field: SerializeField] public int RoomLeft { get; set; }
-        [field: SerializeField] public int RoomRight { get; set; }
-        [field: SerializeField] public float HydeLeft { get; set; }
-        [field: SerializeField] public float HydeRight { get; set; }
-        [field: SerializeField] public float HydeY { get; set; }
-        [field: SerializeField] public float JekyllLeft { get; set; }
-        [field: SerializeField] public float JekyllRight { get; set; }
         [field: SerializeField] public float JekyllY { get; set; }
+        [field: SerializeField] public float CameraY { get; set; }
+        [field: SerializeField] public float CameraLimitRight { get; set; }
+        [field: SerializeField] public float CameraLimitLeft { get; set; }
+        [field: SerializeField] public List<WorldSpawn> Spawns { get; set; }
+    }
+
+    [Serializable] public class WorldSpawn
+    {
+        [field: SerializeField] public int LastRoom { get; set; }
+        [field: SerializeField] public float SpawnX { get; set; }
+    }
+
+    [Serializable] public class WorldExposedZone
+    {
+        [field: SerializeField] public int RelatedWorld { get; set; }
+        [field: SerializeField] public float WorldY { get; set; }
+        [field: SerializeField] public string ZoneLeft { get; set; }
+        [field: SerializeField] public string ZoneRight { get; set; }
+        [field: SerializeField] public float LeftX { get; set; }
+        [field: SerializeField] public float RightX { get; set; }
     }
 }
