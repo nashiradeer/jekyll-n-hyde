@@ -1,6 +1,4 @@
-﻿using JekyllHyde.Entity;
-
-namespace JekyllHyde.Entity.Player
+﻿namespace JekyllHyde.Entity.Player
 {
     public class PlayerSprite : EntitySprite
     {
