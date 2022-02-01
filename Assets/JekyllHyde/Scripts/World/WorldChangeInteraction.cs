@@ -8,9 +8,9 @@ namespace JekyllHyde.World
         [field: SerializeField] private int NewWorld { get; set; }
         private WorldManager Manager { get; set; }
 
-        public void Interact()
+        public void Interact(bool alternativeKey)
         {
-            Manager.LoadWorld(NewWorld, CurrentWorld);
+            if (alternativeKey) Manager.LoadWorld(NewWorld, CurrentWorld);
         }
 
         private void Start()

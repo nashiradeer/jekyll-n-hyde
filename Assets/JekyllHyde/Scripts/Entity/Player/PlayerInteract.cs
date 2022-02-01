@@ -11,16 +11,25 @@ namespace JekyllHyde.Entity.Player
 
         private void FixedUpdate()
         {
-            if ((Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Return)) && !Interacting && InteractiveObject != null)
+            if (IsInteracting(out bool alternativeKey) && !Interacting && InteractiveObject != null)
             {
                 Debug.Log("PlayerInteract: Triggering interact...");
                 Interacting = true;
-                InteractiveObject.Interact();
+                InteractiveObject.Interact(alternativeKey);
             }
-            else if (!(Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Return)) && Interacting)
+            else if (!IsInteracting(out _) && Interacting)
             {
                 Interacting = false;
             }
+        }
+
+        private bool IsInteracting(out bool alternativeKey)
+        {
+            bool normalKey = Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Return);
+            bool altKey = Input.GetAxisRaw("Vertical") == 1;
+            if (!normalKey) alternativeKey = altKey;
+            else alternativeKey = false;
+            return normalKey || altKey;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
