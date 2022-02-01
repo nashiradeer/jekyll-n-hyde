@@ -75,13 +75,15 @@ namespace JekyllHyde.World
         }
     }
 
-    [Serializable] public class WorldManagerElement
+    [Serializable]
+    public class WorldManagerElement
     {
         [field: SerializeField] public GameObject World { get; set; }
         [field: SerializeField] public WorldHeader Header { get; set; }
     }
 
-    [Serializable] public class WorldHeader
+    [Serializable]
+    public class WorldHeader
     {
         [field: SerializeField] public float JekyllY { get; set; }
         [field: SerializeField] public float CameraY { get; set; }
@@ -90,13 +92,15 @@ namespace JekyllHyde.World
         [field: SerializeField] public List<WorldSpawn> Spawns { get; set; }
     }
 
-    [Serializable] public class WorldSpawn
+    [Serializable]
+    public class WorldSpawn
     {
         [field: SerializeField] public int LastRoom { get; set; }
         [field: SerializeField] public float SpawnX { get; set; }
     }
 
-    [Serializable] public class WorldExposedZone
+    [Serializable]
+    public class WorldExposedZone
     {
         [field: SerializeField] public int RelatedWorld { get; set; }
         [field: SerializeField] public float WorldY { get; set; }

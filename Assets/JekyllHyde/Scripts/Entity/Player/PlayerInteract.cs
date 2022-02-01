@@ -1,5 +1,4 @@
 ﻿using JekyllHyde.World;
-using System.Collections;
 using UnityEngine;
 
 namespace JekyllHyde.Entity.Player

@@ -1,4 +1,3 @@
-using JekyllHyde.Entity;
 using UnityEngine;
 
 namespace JekyllHyde.Entity.Player
