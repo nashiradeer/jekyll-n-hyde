@@ -6,18 +6,26 @@ namespace JekyllHyde.Entity.Player
     {
         [field: SerializeField] private PlayerMovement Movement { get; set; }
         [field: SerializeField] private PlayerSprite Sprite { get; set; }
+        [field: SerializeField] private PlayerAudio Audio { get; set; }
 
         public bool IsHidden { get; private set; }
 
         private bool CanHide { get; set; }
 
+        private int CooldownTicks = 0;
+        private int CooldownTotal = 13;
+
         private void FixedUpdate()
         {
-            if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && !IsHidden && CanHide)
+            if (CooldownTicks > 0 && !IsHidden) CooldownTicks--;
+
+            if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && CooldownTicks == 0 && !IsHidden && CanHide)
             {
                 IsHidden = true;
                 Movement.EnabledMovement = false;
                 Sprite.HideAnimation(true);
+                Audio.HideSound.Play();
+                CooldownTicks = CooldownTotal;
             }
 
             if (!(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && IsHidden && CanHide)
