@@ -15,7 +15,7 @@ namespace JekyllHyde.Entity.Player
             {
                 Debug.Log("PlayerInteract: Triggering interact...");
                 Interacting = true;
-                InteractiveObject.Interact(alternativeKey);
+                InteractiveObject.Interact(this, alternativeKey);
             }
             else if (!IsInteracting(out _) && Interacting)
             {

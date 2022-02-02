@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using JekyllHyde.Entity.Player;
+using UnityEngine;
 
 namespace JekyllHyde.World
 {
@@ -8,7 +9,7 @@ namespace JekyllHyde.World
         [field: SerializeField] private int NewWorld { get; set; }
         private WorldManager Manager { get; set; }
 
-        public void Interact(bool alternativeKey)
+        public void Interact(PlayerInteract player, bool alternativeKey)
         {
             if (alternativeKey) Manager.LoadWorld(NewWorld, CurrentWorld);
         }
