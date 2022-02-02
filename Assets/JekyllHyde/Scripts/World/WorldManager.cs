@@ -29,7 +29,7 @@ namespace JekyllHyde.World
         {
             Debug.Log($"WorldManager: Loading room {room} from {lastRoom}. (Unload? {unload})");
             if (unload) UnloadWorld();
-            WorldLoading.color = new Color(0, 0, 0, 1);
+            else WorldLoading.color = new Color(0, 0, 0, 1);
 
             CurrentWorld = Worlds[room];
             CurrentWorldObj = Instantiate(CurrentWorld.World, transform);
@@ -38,9 +38,7 @@ namespace JekyllHyde.World
             Camera.LeftX = CurrentWorld.Header.CameraLimitLeft;
             Camera.transform.position = new Vector3(0, 0, -10);
 
-            float x;
-            if (lastRoom == null) x = CurrentWorld.Header.Spawns[0].SpawnX;
-            else x = (from selectRoom in CurrentWorld.Header.Spawns where selectRoom.LastRoom == lastRoom select selectRoom).FirstOrDefault().SpawnX;
+            float x = (lastRoom == null) ? CurrentWorld.Header.Spawns[0].SpawnX : (from selectRoom in CurrentWorld.Header.Spawns where selectRoom.LastRoom == lastRoom select selectRoom).FirstOrDefault().SpawnX;
 
             Player.transform.position = new Vector3(x, CurrentWorld.Header.JekyllY);
 
@@ -51,8 +49,8 @@ namespace JekyllHyde.World
 
         private void UnloadWorld()
         {
-            WorldLoading.color = new Color(0, 0, 0, 0);
-            Tween FadeOut = WorldLoading.DOFade(1, 1);
+            if (FadeIn != null) FadeIn.Kill();
+            WorldLoading.color = new Color(0, 0, 0, 1);
 
             if (CurrentHyde != null)
             {
@@ -64,9 +62,6 @@ namespace JekyllHyde.World
                 Destroy(CurrentWorldObj);
                 CurrentWorldObj = null;
             }
-
-            if (FadeIn != null) FadeIn.Kill();
-            FadeOut.Kill();
         }
 
         private void Start()
