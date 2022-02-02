@@ -28,7 +28,7 @@ namespace JekyllHyde.Entity.Player
                 CooldownTicks = CooldownTotal;
             }
 
-            if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && IsHidden && CanHide)
+            if (!(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && IsHidden && CanHide)
             {
                 IsHidden = false;
                 Movement.EnabledMovement = true;
@@ -41,7 +41,7 @@ namespace JekyllHyde.Entity.Player
             if (collision.tag == "Hideable")
             {
                 CanHide = true;
-                Debug.Log("PlayerHide: Hide is enabled.");
+                Debug.Log("PlayerHide: Player can hide.");
             }
         }
 
@@ -50,7 +50,7 @@ namespace JekyllHyde.Entity.Player
             if (collision.tag == "Hideable")
             {
                 CanHide = false;
-                Debug.Log("PlayerHide: Hide is disabled.");
+                Debug.Log("PlayerHide: Player can't hide..");
             }
         }
     }
