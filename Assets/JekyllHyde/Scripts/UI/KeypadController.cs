@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -15,7 +16,7 @@ namespace JekyllHyde.UI
         private string CurrentKey { get; set; }
         private bool KeypadEnabled { get; set; }
 
-        public UnityAction KeyCorrected { get; set; }
+        public UnityEvent OnKeyCorrected = new UnityEvent();
 
         public void Open(string correctKey)
         {
@@ -28,12 +29,13 @@ namespace JekyllHyde.UI
 
         public void Close()
         {
+            OnKeyCorrected.RemoveAllListeners();
             KeypadEnabled = false;
 
             CorrectKey = "";
             CurrentKey = "";
 
-            gameObject.SetActive(true);
+            gameObject.SetActive(false);
         }
 
         public void Write(string code)
@@ -62,7 +64,7 @@ namespace JekyllHyde.UI
 
             gameObject.SetActive(false);
 
-            KeyCorrected?.Invoke();
+            OnKeyCorrected.Invoke();
             KeypadUI.sprite = Default;
 
             Close();
