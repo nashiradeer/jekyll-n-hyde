@@ -1,4 +1,5 @@
-﻿using JekyllHyde.World;
+﻿using JekyllHyde.UI;
+using JekyllHyde.World;
 using UnityEngine;
 
 namespace JekyllHyde.Entity.Player
@@ -6,6 +7,9 @@ namespace JekyllHyde.Entity.Player
     // BLINDADO
     public class PlayerInteract : MonoBehaviour
     {
+        [field: SerializeField] public KeypadController Keypad1 { get; private set; }
+        [field: SerializeField] public KeypadController Keypad2 { get; private set; }
+
         private IInteractable InteractiveObject = null;
         private bool Interacting = false;
 
