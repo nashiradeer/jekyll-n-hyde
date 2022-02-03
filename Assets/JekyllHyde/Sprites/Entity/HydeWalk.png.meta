@@ -151,12 +151,12 @@ TextureImporter:
       name: Hyde_Andar_0
       rect:
         serializedVersion: 2
-        x: 56
+        x: 54
         y: 9
-        width: 91
-        height: 212
+        width: 95
+        height: 215
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -172,12 +172,12 @@ TextureImporter:
       name: Hyde_Andar_1
       rect:
         serializedVersion: 2
-        x: 256
+        x: 254
         y: 9
-        width: 91
-        height: 212
+        width: 95
+        height: 215
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -193,12 +193,12 @@ TextureImporter:
       name: Hyde_Andar_2
       rect:
         serializedVersion: 2
-        x: 456
-        y: 8
-        width: 91
-        height: 213
+        x: 454
+        y: 9
+        width: 95
+        height: 215
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -215,11 +215,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 654
-        y: 10
-        width: 93
-        height: 211
+        y: 9
+        width: 95
+        height: 215
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -235,12 +235,12 @@ TextureImporter:
       name: Hyde_Andar_4
       rect:
         serializedVersion: 2
-        x: 856
-        y: 10
-        width: 91
-        height: 211
+        x: 854
+        y: 9
+        width: 95
+        height: 215
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -256,12 +256,12 @@ TextureImporter:
       name: Hyde_Andar_5
       rect:
         serializedVersion: 2
-        x: 1056
-        y: 16
-        width: 94
-        height: 205
+        x: 1054
+        y: 9
+        width: 95
+        height: 215
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -277,12 +277,12 @@ TextureImporter:
       name: Hyde_Andar_6
       rect:
         serializedVersion: 2
-        x: 1253
-        y: 18
-        width: 100
-        height: 203
+        x: 1254
+        y: 9
+        width: 95
+        height: 215
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
