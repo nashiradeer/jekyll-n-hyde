@@ -1,13 +1,17 @@
-﻿using JekyllHyde.Entity.Player;
+using JekyllHyde.Entity.Player;
+using JekyllHyde.UI;
 using UnityEngine;
 
 namespace JekyllHyde.World
 {
-    public class WorldKeypad1Interaction : MonoBehaviour, IInteractable
+    public class WorldKeypadInteraction : MonoBehaviour, IInteractable
     {
         [field: SerializeField] private int CurrentWorld { get; set; }
         [field: SerializeField] private int NewWorld { get; set; }
         [field: SerializeField] private int InventoryIndex { get; set; }
+        [field: SerializeField] private string Password { get; set; }
+        [field: SerializeField] private bool UseAlternativeKeypad { get; set; }
+
         private WorldManager Manager { get; set; }
         private PlayerInventory Inventory { get; set; }
 
@@ -15,14 +19,15 @@ namespace JekyllHyde.World
         {
             if (alternativeKey)
             {
-                if (Inventory.Inventory[PlayerInventory.DEPOSIT_LOCK])
+                if (Inventory.Inventory[InventoryIndex])
                 {
                     LoadWorld();
                 }
                 else
                 {
-                    player.Keypad1.OnKeyCorrected.AddListener(LoadWorld);
-                    player.Keypad1.Open("GRB");
+                    KeypadController keypad = (!UseAlternativeKeypad) ? player.Keypad1 : player.Keypad2;
+                    keypad.OnKeyCorrected.AddListener(LoadWorld);
+                    keypad.Open(Password);
                 }
             }
         }
