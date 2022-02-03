@@ -50,7 +50,7 @@ namespace JekyllHyde.Entity.Player
             if (collision.tag == "Hideable")
             {
                 CanHide = false;
-                Debug.Log("PlayerHide: Player can't hide..");
+                Debug.Log("PlayerHide: Player can't hide.");
             }
         }
     }
