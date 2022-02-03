@@ -69,5 +69,10 @@ namespace JekyllHyde.UI
 
             Close();
         }
+
+        private void FixedUpdate()
+        {
+            if (Input.GetKey(KeyCode.Escape) && KeypadEnabled) Close();
+        }
     }
 }
