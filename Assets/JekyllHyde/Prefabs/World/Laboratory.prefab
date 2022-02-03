@@ -167,7 +167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5294103361901801306}
   - component: {fileID: 1446670977902196354}
-  - component: {fileID: 7173274691511219692}
+  - component: {fileID: 5334279944379323398}
   m_Layer: 0
   m_Name: Deposit Door
   m_TagString: Untagged
@@ -215,7 +215,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.07710695, y: 4.672967}
   m_EdgeRadius: 0
---- !u!114 &7173274691511219692
+--- !u!114 &5334279944379323398
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -224,12 +224,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6362113509086762955}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53e43451d44584d4fa5f615b20e8d98d, type: 3}
+  m_Script: {fileID: 11500000, guid: e73737d8709ea0e4591eccb07a294e47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <CurrentWorld>k__BackingField: 0
   <NewWorld>k__BackingField: 2
   <InventoryIndex>k__BackingField: 0
+  <Password>k__BackingField: GRB
+  <UseAlternativeKeypad>k__BackingField: 0
 --- !u!1 &8366073838395515299
 GameObject:
   m_ObjectHideFlags: 0
