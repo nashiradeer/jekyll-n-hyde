@@ -28,7 +28,7 @@ namespace JekyllHyde.Entity.Player
                 CooldownTicks = CooldownTotal;
             }
 
-            if (!(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && IsHidden && CanHide)
+            if (!(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && IsHidden)
             {
                 IsHidden = false;
                 Movement.EnabledMovement = true;

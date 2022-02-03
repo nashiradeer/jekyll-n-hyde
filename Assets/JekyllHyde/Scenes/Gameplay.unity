@@ -272,7 +272,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &489627701
 RectTransform:
   m_ObjectHideFlags: 0
@@ -807,6 +807,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee88ec4d53e676640b5dd37f96d48dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1457134529
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1897543286}
+    m_Modifications:
+    - target: {fileID: 3570636459970461033, guid: c1d1ab4548dbdc148838446b927976dd, type: 3}
+      propertyPath: m_Name
+      value: Corridor
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781848127279902430, guid: c1d1ab4548dbdc148838446b927976dd, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781848127279902430, guid: c1d1ab4548dbdc148838446b927976dd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781848127279902430, guid: c1d1ab4548dbdc148838446b927976dd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781848127279902430, guid: c1d1ab4548dbdc148838446b927976dd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781848127279902430, guid: c1d1ab4548dbdc148838446b927976dd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781848127279902430, guid: c1d1ab4548dbdc148838446b927976dd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781848127279902430, guid: c1d1ab4548dbdc148838446b927976dd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781848127279902430, guid: c1d1ab4548dbdc148838446b927976dd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781848127279902430, guid: c1d1ab4548dbdc148838446b927976dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781848127279902430, guid: c1d1ab4548dbdc148838446b927976dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781848127279902430, guid: c1d1ab4548dbdc148838446b927976dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c1d1ab4548dbdc148838446b927976dd, type: 3}
+--- !u!4 &1457134530 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6781848127279902430, guid: c1d1ab4548dbdc148838446b927976dd, type: 3}
+  m_PrefabInstance: {fileID: 1457134529}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1486773576
 GameObject:
   m_ObjectHideFlags: 0
@@ -1427,6 +1489,8 @@ MonoBehaviour:
       <Spawns>k__BackingField:
       - <LastRoom>k__BackingField: 0
         <SpawnX>k__BackingField: 5.51
+      - <LastRoom>k__BackingField: 3
+        <SpawnX>k__BackingField: 13.71
   - <World>k__BackingField: {fileID: 3453493049961199148, guid: f69a05368b091024e9ffcd8f5b6f96ca, type: 3}
     <Header>k__BackingField:
       <JekyllY>k__BackingField: -2.38
@@ -1436,6 +1500,26 @@ MonoBehaviour:
       <Spawns>k__BackingField:
       - <LastRoom>k__BackingField: 0
         <SpawnX>k__BackingField: -5.58
+  - <World>k__BackingField: {fileID: 8153240212080069612, guid: e8777d0d7544551469c87dc162562321, type: 3}
+    <Header>k__BackingField:
+      <JekyllY>k__BackingField: -2.59
+      <CameraY>k__BackingField: 0
+      <CameraLimitRight>k__BackingField: -10.81
+      <CameraLimitLeft>k__BackingField: 10.78
+      <Spawns>k__BackingField:
+      - <LastRoom>k__BackingField: 1
+        <SpawnX>k__BackingField: -17.85
+      - <LastRoom>k__BackingField: 4
+        <SpawnX>k__BackingField: 17.52
+  - <World>k__BackingField: {fileID: 8516010451983846186, guid: acceaf89acda6ad40813d2fa1e8e938c, type: 3}
+    <Header>k__BackingField:
+      <JekyllY>k__BackingField: -1.82
+      <CameraY>k__BackingField: 0
+      <CameraLimitRight>k__BackingField: -3.23
+      <CameraLimitLeft>k__BackingField: 3.23
+      <Spawns>k__BackingField:
+      - <LastRoom>k__BackingField: 3
+        <SpawnX>k__BackingField: -8.99
   <ExposedZones>k__BackingField: []
 --- !u!222 &1897543285
 CanvasRenderer:
@@ -1455,7 +1539,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1457134530}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1728,7 +1813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.914
+  m_FalloffIntensity: 0.8
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0
@@ -1742,7 +1827,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 7.87
+  m_PointLightOuterRadius: 5
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
