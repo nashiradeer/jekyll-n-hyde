@@ -1476,7 +1476,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7ff88f0d01de0499fd04d421afd773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Inventory>k__BackingField: {fileID: 1411797580}
   <Keypad1>k__BackingField: {fileID: 1486773578}
   <Keypad2>k__BackingField: {fileID: 1877466434}
 --- !u!1 &8636627726518754528
@@ -1681,7 +1680,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03777659, y: -0.008069515}
+  m_Offset: {x: -0.0094252825, y: -0.008069515}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1692,7 +1691,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4256678, y: 4.308916}
+  m_Size: {x: 1.4457994, y: 4.308916}
   m_EdgeRadius: 0
 --- !u!50 &8636627727337990055
 Rigidbody2D:
