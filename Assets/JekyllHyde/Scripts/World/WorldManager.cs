@@ -34,9 +34,10 @@ namespace JekyllHyde.World
             CurrentWorld = Worlds[room];
             CurrentWorldObj = Instantiate(CurrentWorld.World, transform);
 
+            Camera.CameraY = CurrentWorld.Header.CameraY;
             Camera.RightX = CurrentWorld.Header.CameraLimitRight;
             Camera.LeftX = CurrentWorld.Header.CameraLimitLeft;
-            Camera.transform.position = new Vector3(0, 0, -10);
+            Camera.transform.position = new Vector3(0, CurrentWorld.Header.CameraY, Camera.transform.position.z);
 
             float x = (lastRoom == null) ? CurrentWorld.Header.Spawns[0].SpawnX : (from selectRoom in CurrentWorld.Header.Spawns where selectRoom.LastRoom == lastRoom select selectRoom).FirstOrDefault().SpawnX;
 
