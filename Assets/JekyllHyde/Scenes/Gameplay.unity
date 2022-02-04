@@ -612,7 +612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &489627701
 RectTransform:
   m_ObjectHideFlags: 0
@@ -625,7 +625,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 702167487}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -761,9 +761,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 489627701}
+  - {fileID: 1527790737}
   - {fileID: 1486773577}
   - {fileID: 1877466433}
+  - {fileID: 489627701}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1775,6 +1776,110 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486773576}
   m_CullTransparentMesh: 1
+--- !u!1 &1527790736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1527790737}
+  - component: {fileID: 1527790739}
+  - component: {fileID: 1527790738}
+  - component: {fileID: 1527790740}
+  m_Layer: 5
+  m_Name: Quest Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1527790737
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527790736}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 702167487}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 10, y: -10}
+  m_SizeDelta: {x: 780.3568, y: 34.9108}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &1527790738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527790736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: ffd37e5bcf6bc84429ea419d01fa2ce1, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 48
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1527790739
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527790736}
+  m_CullTransparentMesh: 1
+--- !u!114 &1527790740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527790736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 795c5b132c9d7ff4f978870a84c48b60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <QuestOnScreen>k__BackingField: {fileID: 1527790738}
+  <StepDescriptions>k__BackingField:
+  - 
+  - Colete a substancia azul e adicione no recipiente
+  - Colete a substancia vermelha e adicione no recipiente
+  - Colete a substancia verde e adicione no recipiente
+  - Colete a substancia verde e adicione no recipiente
+  - Beba a substancia
+  - 
+  - Verifique Lucy na sala
+  - Saia da casa pela porta da cozinha
+  - Encontre uma maneira de fugir
 --- !u!1 &1618698818
 GameObject:
   m_ObjectHideFlags: 0
@@ -2810,7 +2915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7ff88f0d01de0499fd04d421afd773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <EnabledInteract>k__BackingField: 1
+  <EnabledInteract>k__BackingField: 0
   <Keypad1>k__BackingField: {fileID: 1486773578}
   <Keypad2>k__BackingField: {fileID: 1877466434}
 --- !u!1 &8636627726518754528
@@ -2942,12 +3047,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eea6c3ce934bdb4aad466ecf18a1c91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <EnabledMovement>k__BackingField: 1
+  <EnabledMovement>k__BackingField: 0
   <Speed>k__BackingField: 2
   <Body>k__BackingField: {fileID: 8636627727337990055}
   <Sprite>k__BackingField: {fileID: 8636627726518754543}
   <Moving>k__BackingField: 0
   <Audio>k__BackingField: {fileID: 1674339741}
+  <WorldManager>k__BackingField: {fileID: 1897543284}
+  <QuestManager>k__BackingField: {fileID: 1527790740}
 --- !u!4 &8636627727337990041
 Transform:
   m_ObjectHideFlags: 0
@@ -2999,7 +3106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f7a950aa1620d469f876a3f5c0501e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <EnabledHide>k__BackingField: 1
+  <EnabledHide>k__BackingField: 0
   <Movement>k__BackingField: {fileID: 8636627727337990040}
   <Sprite>k__BackingField: {fileID: 8636627726518754543}
   <Audio>k__BackingField: {fileID: 1674339741}

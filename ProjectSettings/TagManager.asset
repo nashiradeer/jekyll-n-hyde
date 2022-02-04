@@ -8,6 +8,7 @@ TagManager:
   - WorldManager
   - AudioManager
   - PlayerInventory
+  - QuestManager
   layers:
   - Default
   - TransparentFX
