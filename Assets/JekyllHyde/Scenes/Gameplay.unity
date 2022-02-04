@@ -612,7 +612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &489627701
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1869,6 +1869,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <QuestOnScreen>k__BackingField: {fileID: 1527790738}
+  WorldLoading: {fileID: 0}
+  <Movement>k__BackingField: {fileID: 0}
+  <Interaction>k__BackingField: {fileID: 0}
+  <Hide>k__BackingField: {fileID: 0}
   <StepDescriptions>k__BackingField:
   - 
   - Colete a substancia azul e adicione no recipiente
@@ -1878,6 +1882,8 @@ MonoBehaviour:
   - Beba a substancia
   - 
   - Verifique Lucy na sala
+  - Verifique Lucy na sala
+  - Saia da casa pela porta da cozinha
   - Saia da casa pela porta da cozinha
   - Encontre uma maneira de fugir
 --- !u!1 &1618698818
