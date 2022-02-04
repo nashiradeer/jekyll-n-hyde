@@ -7,6 +7,7 @@ namespace JekyllHyde.Entity.Player
     // BLINDADO
     public class PlayerInteract : MonoBehaviour
     {
+        [field: SerializeField] public bool EnabledInteract { get; set; }
         [field: SerializeField] public KeypadController Keypad1 { get; private set; }
         [field: SerializeField] public KeypadController Keypad2 { get; private set; }
 
@@ -15,7 +16,7 @@ namespace JekyllHyde.Entity.Player
 
         private void FixedUpdate()
         {
-            if (IsInteracting(out bool alternativeKey) && !Interacting && InteractiveObject != null)
+            if (IsInteracting(out bool alternativeKey) && EnabledInteract && !Interacting && InteractiveObject != null)
             {
                 Debug.Log("PlayerInteract: Triggering interact...");
                 Interacting = true;

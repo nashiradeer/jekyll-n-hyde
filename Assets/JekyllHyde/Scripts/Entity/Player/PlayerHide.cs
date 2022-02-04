@@ -4,6 +4,7 @@ namespace JekyllHyde.Entity.Player
 {
     public class PlayerHide : MonoBehaviour
     {
+        [field: SerializeField] public bool EnabledHide { get; set; }
         [field: SerializeField] private PlayerMovement Movement { get; set; }
         [field: SerializeField] private PlayerSprite Sprite { get; set; }
         [field: SerializeField] private PlayerAudio Audio { get; set; }
@@ -19,7 +20,7 @@ namespace JekyllHyde.Entity.Player
         {
             if (CooldownTicks > 0 && !IsHidden) CooldownTicks--;
 
-            if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && CooldownTicks == 0 && !IsHidden && CanHide)
+            if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && EnabledHide && CooldownTicks == 0 && !IsHidden && CanHide)
             {
                 IsHidden = true;
                 Movement.EnabledMovement = false;

@@ -123,6 +123,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &32175613
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 32175614}
+  - component: {fileID: 32175615}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &32175614
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32175613}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 250277558}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &32175615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32175613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe2621ce5a60e3d499b11aadd8f2ba8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Keypad1: {fileID: 1486773578}
+  Keypad2: {fileID: 1877466434}
 --- !u!1 &142439873
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,6 +432,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 196547427}
   m_CullTransparentMesh: 1
+--- !u!1 &250277557
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 250277558}
+  m_Layer: 0
+  m_Name: Testing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &250277558
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250277557}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.3221693, y: -4.1089897, z: -5.5175705}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 32175614}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &294072352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1655,6 +1731,9 @@ MonoBehaviour:
   <KeypadUI>k__BackingField: {fileID: 1486773579}
   <Default>k__BackingField: {fileID: 21300000, guid: 8e4950bdc49187c4dad5c1bf1cd79bf5, type: 3}
   <Correct>k__BackingField: {fileID: 21300000, guid: 80397fe8306694947990ce024269f5cf, type: 3}
+  <Movement>k__BackingField: {fileID: 8636627727337990040}
+  <Interaction>k__BackingField: {fileID: 7517109853307332627}
+  <Hide>k__BackingField: {fileID: 8636627727337990052}
   OnKeyCorrected:
     m_PersistentCalls:
       m_Calls: []
@@ -2129,6 +2208,9 @@ MonoBehaviour:
   <KeypadUI>k__BackingField: {fileID: 1877466435}
   <Default>k__BackingField: {fileID: 21300000, guid: 393497e0ae09961429dac21c6cecff2c, type: 3}
   <Correct>k__BackingField: {fileID: 21300000, guid: fc860ca7c42433a418eb90f5956efe7f, type: 3}
+  <Movement>k__BackingField: {fileID: 8636627727337990040}
+  <Interaction>k__BackingField: {fileID: 7517109853307332627}
+  <Hide>k__BackingField: {fileID: 8636627727337990052}
   OnKeyCorrected:
     m_PersistentCalls:
       m_Calls: []
@@ -2728,6 +2810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7ff88f0d01de0499fd04d421afd773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <EnabledInteract>k__BackingField: 1
   <Keypad1>k__BackingField: {fileID: 1486773578}
   <Keypad2>k__BackingField: {fileID: 1877466434}
 --- !u!1 &8636627726518754528
@@ -2916,6 +2999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f7a950aa1620d469f876a3f5c0501e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <EnabledHide>k__BackingField: 1
   <Movement>k__BackingField: {fileID: 8636627727337990040}
   <Sprite>k__BackingField: {fileID: 8636627726518754543}
   <Audio>k__BackingField: {fileID: 1674339741}
