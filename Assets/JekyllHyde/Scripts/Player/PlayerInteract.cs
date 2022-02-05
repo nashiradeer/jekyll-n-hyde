@@ -2,7 +2,7 @@
 using JekyllHyde.World;
 using UnityEngine;
 
-namespace JekyllHyde.Entity.Player
+namespace JekyllHyde.Player
 {
     // BLINDADO
     public class PlayerInteract : MonoBehaviour

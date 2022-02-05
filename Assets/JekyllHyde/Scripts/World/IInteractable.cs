@@ -1,4 +1,4 @@
-﻿using JekyllHyde.Entity.Player;
+﻿using JekyllHyde.Player;
 
 namespace JekyllHyde.World
 {

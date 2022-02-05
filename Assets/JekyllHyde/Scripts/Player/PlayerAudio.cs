@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace JekyllHyde.Entity.Player
+namespace JekyllHyde.Player
 {
     public class PlayerAudio : MonoBehaviour
     {

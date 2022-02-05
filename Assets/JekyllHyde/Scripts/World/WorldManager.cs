@@ -1,5 +1,5 @@
 using DG.Tweening;
-using JekyllHyde.Entity.Player;
+using JekyllHyde.Player;
 using System;
 using System.Collections.Generic;
 using System.Linq;
