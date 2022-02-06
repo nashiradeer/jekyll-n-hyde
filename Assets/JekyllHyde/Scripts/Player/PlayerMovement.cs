@@ -33,6 +33,9 @@ namespace JekyllHyde.Player
 
             if (Body.velocity.x > 0) Sprite.Direction = EntityDirection.Right;
             if (Body.velocity.x < 0) Sprite.Direction = EntityDirection.Left;
+
+            if (WorldManager.CurrentWorldIndex == 0 && QuestManager.Step == 5 && transform.position.x > 2.92) QuestManager.NextStep();
+            if (WorldManager.CurrentWorldIndex == 3 && QuestManager.Step == 9 && transform.position.x > -0.05) QuestManager.NextStep();
         }
 
         protected void FixedUpdate()

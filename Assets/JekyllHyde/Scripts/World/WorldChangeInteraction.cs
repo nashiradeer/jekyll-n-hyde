@@ -9,6 +9,8 @@ namespace JekyllHyde.World
         [field: SerializeField] private int NewWorld { get; set; }
         private WorldManager Manager { get; set; }
 
+        [field: SerializeField] public int MinimumQuest { get; private set; }
+
         public void Interact(PlayerInteract player, bool alternativeKey)
         {
             if (alternativeKey) Manager.LoadWorld(NewWorld, CurrentWorld);

@@ -54,6 +54,7 @@ namespace JekyllHyde.UI
             if (!KeypadEnabled) return;
 
             string newKey = CurrentKey += code;
+            Debug.Log($"KeypadController: Write requested, result {newKey}.");
             
             if (newKey.Length >= CorrectKey.Length)
             {

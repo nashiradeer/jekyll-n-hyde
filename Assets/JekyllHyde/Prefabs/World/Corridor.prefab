@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <CurrentWorld>k__BackingField: 1
   <NewWorld>k__BackingField: 0
+  <MinimumQuest>k__BackingField: 0
 --- !u!61 &9173572425743524122
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -144,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <CurrentWorld>k__BackingField: 1
   <NewWorld>k__BackingField: 5
+  <MinimumQuest>k__BackingField: 13
 --- !u!1 &3570636459970461033
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,6 +356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <CurrentWorld>k__BackingField: 1
   <NewWorld>k__BackingField: 3
+  <MinimumQuest>k__BackingField: 0
 --- !u!61 &4047050237812137578
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -509,3 +512,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <CurrentWorld>k__BackingField: 1
   <NewWorld>k__BackingField: 7
+  <MinimumQuest>k__BackingField: 13

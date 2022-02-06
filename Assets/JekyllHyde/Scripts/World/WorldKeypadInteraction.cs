@@ -12,6 +12,8 @@ namespace JekyllHyde.World
         [field: SerializeField] private string Password { get; set; }
         [field: SerializeField] private bool UseAlternativeKeypad { get; set; }
 
+        [field: SerializeField] public int MinimumQuest { get; private set; }
+
         private WorldManager Manager { get; set; }
         private PlayerInventory Inventory { get; set; }
 

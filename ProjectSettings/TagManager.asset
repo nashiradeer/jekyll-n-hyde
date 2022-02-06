@@ -46,8 +46,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Hyde
+    uniqueID: 2280394957
+    locked: 0
   - name: Cenary
     uniqueID: 2684651589
+    locked: 0
+  - name: Items
+    uniqueID: 2380781523
     locked: 0
   - name: Player
     uniqueID: 2274254707

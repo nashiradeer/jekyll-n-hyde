@@ -20,6 +20,8 @@ namespace JekyllHyde.World
         [field: SerializeField] public List<WorldManagerElement> Worlds { get; set; }
         [field: SerializeField] public List<WorldExposedZone> ExposedZones { get; set; }
 
+        public int CurrentWorldIndex { get; set; }
+
         private GameObject CurrentHyde = null;
         private WorldManagerElement CurrentWorld = null;
         private GameObject CurrentWorldObj = null;
@@ -30,6 +32,8 @@ namespace JekyllHyde.World
             Debug.Log($"WorldManager: Loading room {room} from {lastRoom}. (Unload? {unload})");
             if (unload) UnloadWorld();
             else WorldLoading.color = new Color(0, 0, 0, 1);
+
+            CurrentWorldIndex = room;
 
             CurrentWorld = Worlds[room];
             CurrentWorldObj = Instantiate(CurrentWorld.World, transform);
