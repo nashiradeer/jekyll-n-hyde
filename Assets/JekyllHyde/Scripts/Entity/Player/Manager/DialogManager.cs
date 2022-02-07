@@ -37,6 +37,8 @@ namespace JekyllHyde.Entity.Player.Manager
             if (RunningDialogMachine != null) yield return RunningDialogMachine;
 
             yield return StartCoroutine(DialogShow(dialog, onScreenTime, fadeTime));
+
+            DialogText.text = "";
         }
 
         private IEnumerator DialogMachine()
