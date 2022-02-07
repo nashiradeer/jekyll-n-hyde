@@ -181,12 +181,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3393522312761474790}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dff3c79401f40234e8a8dd1d31ce0a4c, type: 3}
+  m_Script: {fileID: 11500000, guid: b7800edebd8b0da4f802ebfdf95618cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <EnabledInteraction>k__BackingField: 1
-  <InventoryIndex>k__BackingField: 2
-  <MinimumQuest>k__BackingField: 1
+  <MinimumStep>k__BackingField: 0
+  <InventoryNumber>k__BackingField: 2
 --- !u!61 &3233875277205168091
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -223,7 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1534431057392097389}
   - component: {fileID: 2669807576761303081}
-  - component: {fileID: 98612395624719503}
+  - component: {fileID: 5522501231371990358}
   m_Layer: 0
   m_Name: Potion Mixer
   m_TagString: Untagged
@@ -271,7 +270,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.10122371, y: 3.2219753}
   m_EdgeRadius: 0
---- !u!114 &98612395624719503
+--- !u!114 &5522501231371990358
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -280,10 +279,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3501964599399909146}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 308bf6b87887dfb4e870f3d8738a59da, type: 3}
+  m_Script: {fileID: 11500000, guid: f525b84f3c14e6343ad7ec6c0217be64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MinimumQuest>k__BackingField: 0
+  <MinimumStep>k__BackingField: 0
 --- !u!1 &4842391482230935740
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,12 +350,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4842391482230935740}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cdbfea8e31c60e4bb4959b4d2edd38c, type: 3}
+  m_Script: {fileID: 11500000, guid: d7b7de7bf7111374eb0f4ee100597112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <MinimumStep>k__BackingField: 6
   <CurrentWorld>k__BackingField: 0
   <NewWorld>k__BackingField: 1
-  <MinimumQuest>k__BackingField: 9
 --- !u!1 &6362113509086762955
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,15 +423,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6362113509086762955}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e73737d8709ea0e4591eccb07a294e47, type: 3}
+  m_Script: {fileID: 11500000, guid: 9102317c662eebe44a1e3e413d870f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <MinimumStep>k__BackingField: 8
   <CurrentWorld>k__BackingField: 0
   <NewWorld>k__BackingField: 2
-  <InventoryIndex>k__BackingField: 0
+  <InventoryNumber>k__BackingField: 0
   <Password>k__BackingField: GRB
   <UseAlternativeKeypad>k__BackingField: 0
-  <MinimumQuest>k__BackingField: 13
 --- !u!1 &8251557029016213702
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,12 +525,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8251557029016213702}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dff3c79401f40234e8a8dd1d31ce0a4c, type: 3}
+  m_Script: {fileID: 11500000, guid: b7800edebd8b0da4f802ebfdf95618cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <EnabledInteraction>k__BackingField: 1
-  <InventoryIndex>k__BackingField: 2
-  <MinimumQuest>k__BackingField: 3
+  <MinimumStep>k__BackingField: 0
+  <InventoryNumber>k__BackingField: 3
 --- !u!61 &2308387057718932751
 BoxCollider2D:
   m_ObjectHideFlags: 0

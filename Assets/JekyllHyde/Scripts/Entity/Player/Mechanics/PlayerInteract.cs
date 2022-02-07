@@ -1,21 +1,21 @@
-﻿using DG.Tweening;
+﻿using JekyllHyde.Entity.Player.Manager;
 using JekyllHyde.UI;
-using JekyllHyde.World;
-using System.Collections;
+using JekyllHyde.World.Interaction;
+using JekyllHyde.World.Manager;
 using UnityEngine;
-using TMPro;
 
-namespace JekyllHyde.Player
+namespace JekyllHyde.Entity.Player.Mechanics
 {
     // BLINDADO
     public class PlayerInteract : MonoBehaviour
     {
+        [field: SerializeField] public PlayerManager Manager { get; private set; }
         [field: SerializeField] public bool EnabledInteract { get; set; }
-        [field: SerializeField] public KeypadController Keypad1 { get; private set; }
-        [field: SerializeField] public KeypadController Keypad2 { get; private set; }
-        [field: SerializeField] public PlayerMovement Movement { get; private set; }
-        [field: SerializeField] public TMP_Text DialogText { get; private set; }
-        [field: SerializeField] public QuestManager Quest { get; private set; }
+        [field: SerializeField] public KeypadController Keypad1 { get; set; }
+        [field: SerializeField] public KeypadController Keypad2 { get; set; }
+
+        [field: SerializeField] private QuestManager QuestManager { get; set; }
+        [field: SerializeField] private DialogManager DialogManager { get; set; }
 
         private IInteractable InteractiveObject = null;
         private bool Interacting = false;
@@ -24,13 +24,12 @@ namespace JekyllHyde.Player
         {
             if (IsInteracting(out bool alternativeKey) && EnabledInteract && !Interacting && InteractiveObject != null)
             {
-                if (InteractiveObject.MinimumQuest <= Quest.Step)
-                {
-                    Debug.Log("PlayerInteract: Triggering interact...");
-                    Interacting = true;
-                    InteractiveObject.Interact(this, alternativeKey);
-                }
-                else StartCoroutine(GameplayStart());
+                Debug.Log($"PlayerInteract: Triggering interact... (Alternative key? {alternativeKey})");
+
+                Interacting = true;
+
+                if (InteractiveObject.MinimumStep <= QuestManager.Step) InteractiveObject.Interact(this, alternativeKey);
+                else DialogManager.Show("Nao tenho nada para ver aqui agora", 0.5f, 0.4f);
             }
             else if (!IsInteracting(out _) && Interacting)
             {
@@ -42,24 +41,11 @@ namespace JekyllHyde.Player
         {
             bool normalKey = Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Return);
             bool altKey = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);
+
             if (!normalKey) alternativeKey = altKey;
             else alternativeKey = false;
+
             return normalKey || altKey;
-        }
-
-        private IEnumerator GameplayStart()
-        {
-            EnabledInteract = false;
-            Movement.EnabledMovement = false;
-
-            DialogText.text = "Não tenho nada para ver aqui agora";
-
-            yield return DialogText.DOFade(1, 0.4f).WaitForCompletion();
-            yield return new WaitForSeconds(0.7f);
-            yield return DialogText.DOFade(0, 0.4f).WaitForCompletion();
-
-            EnabledInteract = true;
-            Movement.EnabledMovement = true;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

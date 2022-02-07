@@ -42,12 +42,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 807725233887854198}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fe295596ffac2d428b1f401e3e017c9, type: 3}
+  m_Script: {fileID: 11500000, guid: b7800edebd8b0da4f802ebfdf95618cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <EnabledInteraction>k__BackingField: 1
-  <InventoryIndex>k__BackingField: 6
-  <MinimumQuest>k__BackingField: 0
+  <MinimumStep>k__BackingField: 0
+  <InventoryNumber>k__BackingField: 6
 --- !u!212 &7900698079829236121
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -192,12 +191,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1028361369019515962}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cdbfea8e31c60e4bb4959b4d2edd38c, type: 3}
+  m_Script: {fileID: 11500000, guid: d7b7de7bf7111374eb0f4ee100597112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <MinimumStep>k__BackingField: 0
   <CurrentWorld>k__BackingField: 7
   <NewWorld>k__BackingField: 1
-  <MinimumQuest>k__BackingField: 0
 --- !u!1 &2406555999461199913
 GameObject:
   m_ObjectHideFlags: 0

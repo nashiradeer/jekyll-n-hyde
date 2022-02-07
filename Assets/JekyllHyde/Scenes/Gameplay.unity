@@ -607,7 +607,7 @@ GameObject:
   - component: {fileID: 489627703}
   - component: {fileID: 489627702}
   m_Layer: 5
-  m_Name: World Loading
+  m_Name: Vision Overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -625,7 +625,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 702167487}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -645,7 +645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -702,7 +702,7 @@ RectTransform:
   - {fileID: 1713557562}
   - {fileID: 1619317399}
   m_Father: {fileID: 702167487}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -808,6 +808,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 1889534184}
   - {fileID: 489627701}
   - {fileID: 535182462}
   - {fileID: 1527790737}
@@ -1693,7 +1694,7 @@ GameObject:
   - component: {fileID: 1411797580}
   m_Layer: 0
   m_Name: Inventory
-  m_TagString: PlayerInventory
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1758,7 +1759,7 @@ RectTransform:
   - {fileID: 1618698819}
   - {fileID: 954466763}
   m_Father: {fileID: 702167487}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1780,9 +1781,7 @@ MonoBehaviour:
   <KeypadUI>k__BackingField: {fileID: 1486773579}
   <Default>k__BackingField: {fileID: 21300000, guid: 8e4950bdc49187c4dad5c1bf1cd79bf5, type: 3}
   <Correct>k__BackingField: {fileID: 21300000, guid: 80397fe8306694947990ce024269f5cf, type: 3}
-  <Movement>k__BackingField: {fileID: 8636627727337990040}
-  <Interaction>k__BackingField: {fileID: 7517109853307332627}
-  <Hide>k__BackingField: {fileID: 8636627727337990052}
+  <PlayerManager>k__BackingField: {fileID: 8636627727337990044}
   OnKeyCorrected:
     m_PersistentCalls:
       m_Calls: []
@@ -1855,7 +1854,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 702167487}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1913,35 +1912,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1527790736}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 795c5b132c9d7ff4f978870a84c48b60, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ae080a26ab3d8d4fa67c680290c12a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <DialogText>k__BackingField: {fileID: 1882010412}
+  <VisionOverlay>k__BackingField: {fileID: 489627702}
   <QuestOnScreen>k__BackingField: {fileID: 1527790738}
-  <WorldLoading>k__BackingField: {fileID: 489627702}
-  <Movement>k__BackingField: {fileID: 8636627727337990040}
-  <Interaction>k__BackingField: {fileID: 7517109853307332627}
-  <Hide>k__BackingField: {fileID: 8636627727337990052}
+  <PlayerManager>k__BackingField: {fileID: 8636627727337990044}
+  <DialogManager>k__BackingField: {fileID: 1882010414}
   <EndGameScreen>k__BackingField: {fileID: 535182461}
-  <EndGameTxt1>k__BackingField: {fileID: 1984930088}
-  <EndGameTxt2>k__BackingField: {fileID: 1713557563}
-  <EndGameTxt3>k__BackingField: {fileID: 1619317400}
+  <EndGameText1>k__BackingField: {fileID: 1984930088}
+  <EndGameText2>k__BackingField: {fileID: 1713557563}
+  <EndGameText3>k__BackingField: {fileID: 1619317400}
   <StepDescriptions>k__BackingField:
   - 
   - Colete a substancia azul e adicione no recipiente
-  - Colete a substancia azul e adicione no recipiente
   - Colete a substancia vermelha e adicione no recipiente
-  - Colete a substancia vermelha e adicione no recipiente
-  - Colete a substancia verde e adicione no recipiente
   - Colete a substancia verde e adicione no recipiente
   - Beba a substancia
   - 
   - Verifique Lucy na sala
-  - Verifique Lucy na sala
-  - Saia da casa pela porta da cozinha
   - Saia da casa pela porta da cozinha
   - Encontre uma maneira de fugir
-  - 
 --- !u!1 &1618698818
 GameObject:
   m_ObjectHideFlags: 0
@@ -2463,7 +2454,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "A policia acredita que eu fui o responsavel pela morte de Lucy, ent\xE3o
-    eu devo tomar\r cuidado para n\xE3o ser pego."
+    eu devo tomar\r cuidado para nao ser pego."
 --- !u!222 &1713557564
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2512,7 +2503,7 @@ RectTransform:
   - {fileID: 1995997374}
   - {fileID: 2117349075}
   m_Father: {fileID: 702167487}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2534,9 +2525,7 @@ MonoBehaviour:
   <KeypadUI>k__BackingField: {fileID: 1877466435}
   <Default>k__BackingField: {fileID: 21300000, guid: 393497e0ae09961429dac21c6cecff2c, type: 3}
   <Correct>k__BackingField: {fileID: 21300000, guid: fc860ca7c42433a418eb90f5956efe7f, type: 3}
-  <Movement>k__BackingField: {fileID: 8636627727337990040}
-  <Interaction>k__BackingField: {fileID: 7517109853307332627}
-  <Hide>k__BackingField: {fileID: 8636627727337990052}
+  <PlayerManager>k__BackingField: {fileID: 8636627727337990044}
   OnKeyCorrected:
     m_PersistentCalls:
       m_Calls: []
@@ -2589,6 +2578,7 @@ GameObject:
   - component: {fileID: 1882010411}
   - component: {fileID: 1882010413}
   - component: {fileID: 1882010412}
+  - component: {fileID: 1882010414}
   m_Layer: 0
   m_Name: Dialog
   m_TagString: Untagged
@@ -2748,6 +2738,94 @@ MeshRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 1
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1882010414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882010410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72edc3ec78dd58148b0ea8a832848e43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <DialogText>k__BackingField: {fileID: 1882010412}
+--- !u!1 &1889534183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1889534184}
+  - component: {fileID: 1889534186}
+  - component: {fileID: 1889534185}
+  m_Layer: 5
+  m_Name: World Loading
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1889534184
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889534183}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 702167487}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1889534185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889534183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1889534186
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889534183}
+  m_CullTransparentMesh: 1
 --- !u!1 &1897543283
 GameObject:
   m_ObjectHideFlags: 0
@@ -2775,10 +2853,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1897543283}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ced98423df0434e4d9d3fd34b139ecae, type: 3}
+  m_Script: {fileID: 11500000, guid: 457ae8d95c94be143868599c0d7db14f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WorldLoading: {fileID: 489627702}
+  WorldLoading: {fileID: 1889534185}
   Camera: {fileID: 1281577098}
   <InitialWorld>k__BackingField: 0
   <Player>k__BackingField: {fileID: 8636627727337990043}
@@ -3386,12 +3464,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7ff88f0d01de0499fd04d421afd773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Manager>k__BackingField: {fileID: 8636627727337990044}
   <EnabledInteract>k__BackingField: 0
   <Keypad1>k__BackingField: {fileID: 1486773578}
   <Keypad2>k__BackingField: {fileID: 1877466434}
-  <Movement>k__BackingField: {fileID: 8636627727337990040}
-  <DialogText>k__BackingField: {fileID: 1882010412}
-  <Quest>k__BackingField: {fileID: 1527790740}
+  <QuestManager>k__BackingField: {fileID: 1527790740}
+  <DialogManager>k__BackingField: {fileID: 1882010414}
 --- !u!1 &8636627726518754528
 GameObject:
   m_ObjectHideFlags: 0
@@ -3507,7 +3585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78efe1d192d3dff4ea298079512623b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <AnimatorCtrl>k__BackingField: {fileID: 8636627726518754540}
+  <Animator>k__BackingField: {fileID: 8636627726518754540}
   <CurrentDirection>k__BackingField: 1
 --- !u!114 &8636627727337990040
 MonoBehaviour:
@@ -3562,6 +3640,7 @@ GameObject:
   - component: {fileID: 8636627727337990054}
   - component: {fileID: 8636627727337990052}
   - component: {fileID: 7517109853307332627}
+  - component: {fileID: 8636627727337990044}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3569,6 +3648,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8636627727337990044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8636627727337990043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef386dd27e173cb44a989546aa44249b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <DialogManager>k__BackingField: {fileID: 1882010414}
+  <Movement>k__BackingField: {fileID: 8636627727337990040}
+  <Interact>k__BackingField: {fileID: 7517109853307332627}
+  <Hide>k__BackingField: {fileID: 8636627727337990052}
+  <Inventory>k__BackingField: {fileID: 1411797580}
 --- !u!114 &8636627727337990052
 MonoBehaviour:
   m_ObjectHideFlags: 0

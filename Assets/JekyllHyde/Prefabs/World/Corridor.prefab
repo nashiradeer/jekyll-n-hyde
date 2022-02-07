@@ -41,12 +41,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 357231709623670900}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cdbfea8e31c60e4bb4959b4d2edd38c, type: 3}
+  m_Script: {fileID: 11500000, guid: d7b7de7bf7111374eb0f4ee100597112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <MinimumStep>k__BackingField: 0
   <CurrentWorld>k__BackingField: 1
   <NewWorld>k__BackingField: 0
-  <MinimumQuest>k__BackingField: 0
 --- !u!61 &9173572425743524122
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -140,12 +140,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3242216850527964381}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cdbfea8e31c60e4bb4959b4d2edd38c, type: 3}
+  m_Script: {fileID: 11500000, guid: d7b7de7bf7111374eb0f4ee100597112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <MinimumStep>k__BackingField: 8
   <CurrentWorld>k__BackingField: 1
   <NewWorld>k__BackingField: 5
-  <MinimumQuest>k__BackingField: 13
 --- !u!1 &3570636459970461033
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,12 +351,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6221795640028468245}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cdbfea8e31c60e4bb4959b4d2edd38c, type: 3}
+  m_Script: {fileID: 11500000, guid: d7b7de7bf7111374eb0f4ee100597112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <MinimumStep>k__BackingField: 0
   <CurrentWorld>k__BackingField: 1
   <NewWorld>k__BackingField: 3
-  <MinimumQuest>k__BackingField: 0
 --- !u!61 &4047050237812137578
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -507,9 +507,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8846195829748245290}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cdbfea8e31c60e4bb4959b4d2edd38c, type: 3}
+  m_Script: {fileID: 11500000, guid: d7b7de7bf7111374eb0f4ee100597112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <MinimumStep>k__BackingField: 8
   <CurrentWorld>k__BackingField: 1
   <NewWorld>k__BackingField: 7
-  <MinimumQuest>k__BackingField: 13

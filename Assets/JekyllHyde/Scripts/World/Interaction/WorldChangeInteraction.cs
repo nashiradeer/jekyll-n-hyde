@@ -1,15 +1,16 @@
-﻿using JekyllHyde.Player;
+﻿using JekyllHyde.Entity.Player.Mechanics;
+using JekyllHyde.World.Manager;
 using UnityEngine;
 
-namespace JekyllHyde.World
+namespace JekyllHyde.World.Interaction
 {
     public class WorldChangeInteraction : MonoBehaviour, IInteractable
     {
+        [field: SerializeField] public int MinimumStep { get; private set; }
+
         [field: SerializeField] private int CurrentWorld { get; set; }
         [field: SerializeField] private int NewWorld { get; set; }
         private WorldManager Manager { get; set; }
-
-        [field: SerializeField] public int MinimumQuest { get; private set; }
 
         public void Interact(PlayerInteract player, bool alternativeKey)
         {

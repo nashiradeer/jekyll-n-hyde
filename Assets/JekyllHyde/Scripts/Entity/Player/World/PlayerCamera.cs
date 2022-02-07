@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace JekyllHyde.Player
+namespace JekyllHyde.Entity.Player.World
 {
     public class PlayerCamera : MonoBehaviour
     {

@@ -1,4 +1,4 @@
-using JekyllHyde.Player;
+using JekyllHyde.Entity.Player.Manager;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,9 +11,7 @@ namespace JekyllHyde.UI
         [field: SerializeField] private Image KeypadUI { get; set; }
         [field: SerializeField] private Sprite Default { get; set; }
         [field: SerializeField] private Sprite Correct { get; set; }
-        [field: SerializeField] private PlayerMovement Movement { get; set; }
-        [field: SerializeField] private PlayerInteract Interaction { get; set; }
-        [field: SerializeField] private PlayerHide Hide { get; set; }
+        [field: SerializeField] private PlayerManager PlayerManager { get; set; }
 
         private string CorrectKey { get; set; }
         private string CurrentKey { get; set; }
@@ -23,9 +21,7 @@ namespace JekyllHyde.UI
 
         public void Open(string correctKey)
         {
-            Movement.EnabledMovement = false;
-            Interaction.EnabledInteract = false;
-            Hide.EnabledHide = false;
+            PlayerManager.Mechanics(false);
 
             CorrectKey = correctKey;
 
@@ -44,9 +40,7 @@ namespace JekyllHyde.UI
 
             gameObject.SetActive(false);
 
-            Movement.EnabledMovement = true;
-            Interaction.EnabledInteract = true;
-            Hide.EnabledHide = true;
+            PlayerManager.Mechanics(true);
         }
 
         public void Write(string code)

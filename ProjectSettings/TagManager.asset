@@ -7,7 +7,6 @@ TagManager:
   - Hideable
   - WorldManager
   - AudioManager
-  - PlayerInventory
   - QuestManager
   layers:
   - Default

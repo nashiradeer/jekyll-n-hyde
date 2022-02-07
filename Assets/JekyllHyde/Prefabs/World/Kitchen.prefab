@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 2407670269204988505}
   - component: {fileID: 4001783896218481384}
   m_Layer: 0
-  m_Name: Lock 1
+  m_Name: Padlock 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -230,9 +230,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e690d31fae3353c4380a0c82f610f1a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Lock1>k__BackingField: {fileID: 5192462262600807346}
-  <Lock2>k__BackingField: {fileID: 8864233215734886413}
-  <MinimumQuest>k__BackingField: 0
+  <MinimumStep>k__BackingField: 0
+  <Padlock1>k__BackingField: {fileID: 5192462262600807346}
+  <Padlock2>k__BackingField: {fileID: 8864233215734886413}
 --- !u!1 &8066187838381615109
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,12 +300,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8066187838381615109}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cdbfea8e31c60e4bb4959b4d2edd38c, type: 3}
+  m_Script: {fileID: 11500000, guid: d7b7de7bf7111374eb0f4ee100597112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <MinimumStep>k__BackingField: 0
   <CurrentWorld>k__BackingField: 4
   <NewWorld>k__BackingField: 3
-  <MinimumQuest>k__BackingField: 0
 --- !u!1 &8516010451983846186
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,7 +402,7 @@ GameObject:
   - component: {fileID: 7083420188052259923}
   - component: {fileID: 8960193750330138592}
   m_Layer: 0
-  m_Name: Lock 2
+  m_Name: Padlock 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

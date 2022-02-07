@@ -1,6 +1,7 @@
+using JekyllHyde.Entity.Player.World;
 using UnityEngine;
 
-namespace JekyllHyde.Player
+namespace JekyllHyde.Entity.Player.Mechanics
 {
     public class PlayerHide : MonoBehaviour
     {

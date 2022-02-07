@@ -1,10 +1,10 @@
-﻿using JekyllHyde.Player;
+﻿using JekyllHyde.Entity.Player.Mechanics;
 
-namespace JekyllHyde.World
+namespace JekyllHyde.World.Interaction
 {
     public interface IInteractable
     {
-        int MinimumQuest { get; }
+        int MinimumStep { get; }
 
         void Interact(PlayerInteract player, bool alternativeKey);
     }

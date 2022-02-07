@@ -1,12 +1,12 @@
 using DG.Tweening;
-using JekyllHyde.Player;
+using JekyllHyde.Entity.Player.World;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace JekyllHyde.World
+namespace JekyllHyde.World.Manager
 {
     public class WorldManager : MonoBehaviour
     {
