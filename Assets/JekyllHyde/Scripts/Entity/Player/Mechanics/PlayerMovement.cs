@@ -31,7 +31,7 @@ namespace JekyllHyde.Entity.Player.Mechanics
             if (Moving && !Audio.WalkSound.isPlaying) Audio.WalkSound.Play();
             else if (!Moving) Audio.WalkSound.Stop();
 
-            if (WorldManager.CurrentWorldIndex == 0 && QuestManager.Step == 3 && transform.position.x > 2.92) QuestManager.GreenPotionTrigger();
+            if (WorldManager.CurrentWorldIndex == 0 && QuestManager.Step == 3 && transform.position.x > 2) QuestManager.GreenPotionTrigger();
             if (WorldManager.CurrentWorldIndex == 3 && QuestManager.Step == 6 && transform.position.x > -0.05) QuestManager.LucyTrigger();
         }
 

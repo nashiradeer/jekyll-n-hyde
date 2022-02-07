@@ -11,6 +11,7 @@ namespace JekyllHyde.World.Manager
     public class QuestManager : MonoBehaviour
     {
         [field: SerializeField] private Image VisionOverlay { get; set; }
+        [field: SerializeField] private Image Tutorial { get; set; }
         [field: SerializeField] private Text QuestOnScreen { get; set; }
         [field: SerializeField] private PlayerManager PlayerManager { get; set; }
         [field: SerializeField] private DialogManager DialogManager { get; set; }
@@ -38,6 +39,7 @@ namespace JekyllHyde.World.Manager
             switch (Step)
             {
                 case 0:
+                    Tutorial.gameObject.SetActive(true);
                     StartCoroutine(GameplayStart());
                     break;
                 case 5:
@@ -131,6 +133,10 @@ namespace JekyllHyde.World.Manager
 
         private IEnumerator GameplayStart()
         {
+            yield return new WaitForSeconds(2f);
+            yield return Tutorial.DOFade(0f, 1.5f).WaitForCompletion();
+            Tutorial.gameObject.SetActive(false);
+
             yield return DialogManager.ShowNow("Eu devo terminar a pocao antes que seja tarde demais e ele se liberte", 2f, 1.25f);
 
             PlayerManager.Mechanics(true);
