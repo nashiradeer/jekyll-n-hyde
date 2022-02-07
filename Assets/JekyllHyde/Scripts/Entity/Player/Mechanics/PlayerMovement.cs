@@ -10,10 +10,11 @@ namespace JekyllHyde.Entity.Player.Mechanics
         [field: SerializeField] public float Speed { get; set; }
         [field: SerializeField] private Rigidbody2D Body { get; set; }
         [field: SerializeField] private PlayerSprite Sprite { get; set; }
-        [field: SerializeField] private bool Moving { get; set; }
         [field: SerializeField] private PlayerAudio Audio { get; set; }
         [field: SerializeField] private WorldManager WorldManager { get; set; }
         [field: SerializeField] private QuestManager QuestManager { get; set; }
+
+        public bool Moving { get; set; }
 
         public void Move(float x)
         {

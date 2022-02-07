@@ -1,4 +1,6 @@
 using DG.Tweening;
+using JekyllHyde.Entity;
+using JekyllHyde.Entity.Player.Mechanics;
 using JekyllHyde.Entity.Player.World;
 using System;
 using System.Collections.Generic;
@@ -17,10 +19,11 @@ namespace JekyllHyde.World.Manager
         [field: SerializeField] public GameObject Player { get; set; }
         [field: SerializeField] public GameObject HydePrefab { get; set; }
         //[field: SerializeField] public HydeSimulator HydeAi { get; set; } = null;
-        [field: SerializeField] public List<WorldManagerElement> Worlds { get; set; }
-        [field: SerializeField] public List<WorldExposedZone> ExposedZones { get; set; }
+        [field: SerializeField] public List<WorldManagerElement> Worlds { get; private set; }
+        [field: SerializeField] public List<WorldExposedZone> ExposedZones { get; private set; }
 
         public int CurrentWorldIndex { get; set; }
+        public WorldExposedZone[] CurrentExposedZones { get; set; }
 
         private GameObject CurrentHyde = null;
         private WorldManagerElement CurrentWorld = null;
@@ -47,7 +50,7 @@ namespace JekyllHyde.World.Manager
 
             Player.transform.position = new Vector3(x, CurrentWorld.Header.JekyllY);
 
-            // Pass Hyde from Simulator to World if he are in here
+            CurrentExposedZones = (from zone in ExposedZones where zone.RelatedWorld == room select zone).ToArray();
 
             FadeIn = WorldLoading.DOFade(0, 1);
         }
@@ -57,16 +60,39 @@ namespace JekyllHyde.World.Manager
             if (FadeIn != null) FadeIn.Kill();
             WorldLoading.color = new Color(0, 0, 0, 1);
 
-            if (CurrentHyde != null)
-            {
-                // Pass Hyde from World to Simulator
-            }
-
             if (CurrentWorldObj != null)
             {
                 Destroy(CurrentWorldObj);
                 CurrentWorldObj = null;
             }
+        }
+
+        public void SyncHyde(int exposedZone, float x, EntityDirection direction)
+        {
+            if (ExposedZones[exposedZone].RelatedWorld == CurrentWorldIndex)
+            {
+                if (CurrentHyde == null)
+                {
+                    CurrentHyde = Instantiate(HydePrefab, new Vector3(ExposedZones[exposedZone].HydeZeroX + x, ExposedZones[exposedZone].WorldY, 0), Quaternion.identity);
+                    CurrentHyde.transform.Rotate(new Vector3(0, (direction == EntityDirection.Left) ? 0 : 180, 0));
+                }
+                else
+                {
+                    CurrentHyde.transform.position = new Vector3(ExposedZones[exposedZone].HydeZeroX + x, ExposedZones[exposedZone].WorldY, 0);
+                }
+            }
+            else DeleteHyde();
+        }
+
+        public void DeleteHyde()
+        {
+            Destroy(CurrentHyde);
+            CurrentHyde = null;
+        }
+
+        public int GetExposedZoneIndex(WorldExposedZone exposedZone)
+        {
+            return ExposedZones.IndexOf(exposedZone);
         }
 
         private void Start()
@@ -104,8 +130,7 @@ namespace JekyllHyde.World.Manager
     {
         [field: SerializeField] public int RelatedWorld { get; set; }
         [field: SerializeField] public float WorldY { get; set; }
-        [field: SerializeField] public string ZoneLeft { get; set; }
-        [field: SerializeField] public string ZoneRight { get; set; }
+        [field: SerializeField] public float HydeZeroX { get; set; }
         [field: SerializeField] public float LeftX { get; set; }
         [field: SerializeField] public float RightX { get; set; }
     }

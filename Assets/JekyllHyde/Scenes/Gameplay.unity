@@ -461,7 +461,7 @@ Transform:
   m_Children:
   - {fileID: 32175614}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &294072352
 GameObject:
@@ -625,7 +625,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 702167487}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -670,6 +670,81 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &451743860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 451743861}
+  - component: {fileID: 451743863}
+  - component: {fileID: 451743862}
+  m_Layer: 5
+  m_Name: HydeMark
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &451743861
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451743860}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 702167487}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 25}
+  m_SizeDelta: {x: 43.53, y: 36.7529}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &451743862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451743860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 3189471319018967100, guid: 09a2f1899af47bb498df8ec50eec62e9, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &451743863
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451743860}
+  m_CullTransparentMesh: 1
 --- !u!1 &489627700
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,7 +852,7 @@ RectTransform:
   - {fileID: 1713557562}
   - {fileID: 1619317399}
   m_Father: {fileID: 702167487}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -885,13 +960,14 @@ RectTransform:
   m_Children:
   - {fileID: 1889534184}
   - {fileID: 489627701}
+  - {fileID: 451743861}
   - {fileID: 415441567}
   - {fileID: 535182462}
   - {fileID: 1527790737}
   - {fileID: 1486773577}
   - {fileID: 1877466433}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1094,7 +1170,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &954466762
 GameObject:
@@ -1707,7 +1783,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1281577097
 MonoBehaviour:
@@ -1758,6 +1834,64 @@ MonoBehaviour:
   <LeftX>k__BackingField: 0
   <RightX>k__BackingField: 0
   <CameraY>k__BackingField: 0
+--- !u!1 &1350162199
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1350162201}
+  - component: {fileID: 1350162200}
+  m_Layer: 0
+  m_Name: Hyde Simulator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1350162200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350162199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f93edca722e7ea84e8843acfd7b097d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Speed>k__BackingField: 0.055
+  <WorldManager>k__BackingField: {fileID: 1897543284}
+  <Worlds>k__BackingField:
+  - <ExposedZone>k__BackingField: 0
+    <Size>k__BackingField: 31
+  - <ExposedZone>k__BackingField: -1
+    <Size>k__BackingField: 5
+  - <ExposedZone>k__BackingField: 1
+    <Size>k__BackingField: 9
+  - <ExposedZone>k__BackingField: -1
+    <Size>k__BackingField: 5
+  - <ExposedZone>k__BackingField: 2
+    <Size>k__BackingField: 32
+  <X>k__BackingField: 0
+  <CurrentZone>k__BackingField: 0
+--- !u!4 &1350162201
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350162199}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 308.5208, y: 186.66322, z: -41.380653}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1411797578
 GameObject:
   m_ObjectHideFlags: 0
@@ -1829,7 +1963,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1486773576
 GameObject:
@@ -1865,7 +1999,7 @@ RectTransform:
   - {fileID: 1618698819}
   - {fileID: 954466763}
   m_Father: {fileID: 702167487}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1960,7 +2094,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 702167487}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -2026,6 +2160,7 @@ MonoBehaviour:
   <QuestOnScreen>k__BackingField: {fileID: 1527790738}
   <PlayerManager>k__BackingField: {fileID: 8636627727337990044}
   <DialogManager>k__BackingField: {fileID: 1882010414}
+  <HydeAi>k__BackingField: {fileID: 1350162200}
   <EndGameScreen>k__BackingField: {fileID: 535182461}
   <EndGameText1>k__BackingField: {fileID: 1984930088}
   <EndGameText2>k__BackingField: {fileID: 1713557563}
@@ -2610,7 +2745,7 @@ RectTransform:
   - {fileID: 1995997374}
   - {fileID: 2117349075}
   m_Father: {fileID: 702167487}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2875,7 +3010,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1889534184
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2967,7 +3102,7 @@ MonoBehaviour:
   Camera: {fileID: 1281577098}
   <InitialWorld>k__BackingField: 0
   <Player>k__BackingField: {fileID: 8636627727337990043}
-  <HydePrefab>k__BackingField: {fileID: 0}
+  <HydePrefab>k__BackingField: {fileID: 5891402605769538754, guid: b4acc894bb8f7004ba171c422714c0f7, type: 3}
   <Worlds>k__BackingField:
   - <World>k__BackingField: {fileID: 3335844032669793182, guid: 50a383aec6e20824a95ae21db923f9ba, type: 3}
     <Header>k__BackingField:
@@ -3055,7 +3190,22 @@ MonoBehaviour:
       <Spawns>k__BackingField:
       - <LastRoom>k__BackingField: 1
         <SpawnX>k__BackingField: 6.84
-  <ExposedZones>k__BackingField: []
+  <ExposedZones>k__BackingField:
+  - <RelatedWorld>k__BackingField: 6
+    <WorldY>k__BackingField: -0.61
+    <HydeZeroX>k__BackingField: -15
+    <LeftX>k__BackingField: 14.74
+    <RightX>k__BackingField: -13.52
+  - <RelatedWorld>k__BackingField: 1
+    <WorldY>k__BackingField: 0.14
+    <HydeZeroX>k__BackingField: -5.5
+    <LeftX>k__BackingField: 2.6
+    <RightX>k__BackingField: -4.46
+  - <RelatedWorld>k__BackingField: 3
+    <WorldY>k__BackingField: -0.73
+    <HydeZeroX>k__BackingField: -16
+    <LeftX>k__BackingField: 14.87
+    <RightX>k__BackingField: -14.74
 --- !u!222 &1897543285
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3076,7 +3226,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3710,7 +3860,6 @@ MonoBehaviour:
   <Speed>k__BackingField: 2
   <Body>k__BackingField: {fileID: 8636627727337990055}
   <Sprite>k__BackingField: {fileID: 8636627726518754543}
-  <Moving>k__BackingField: 0
   <Audio>k__BackingField: {fileID: 1674339741}
   <WorldManager>k__BackingField: {fileID: 1897543284}
   <QuestManager>k__BackingField: {fileID: 1527790740}
@@ -3731,7 +3880,7 @@ Transform:
   - {fileID: 1411797579}
   - {fileID: 1882010411}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8636627727337990043
 GameObject:
@@ -3748,6 +3897,7 @@ GameObject:
   - component: {fileID: 8636627727337990052}
   - component: {fileID: 7517109853307332627}
   - component: {fileID: 8636627727337990044}
+  - component: {fileID: 8636627727337990045}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3772,6 +3922,23 @@ MonoBehaviour:
   <Interact>k__BackingField: {fileID: 7517109853307332627}
   <Hide>k__BackingField: {fileID: 8636627727337990052}
   <Inventory>k__BackingField: {fileID: 1411797580}
+--- !u!114 &8636627727337990045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8636627727337990043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21759fbd60f3bb945b9308bd7afc2e80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <WorldManager>k__BackingField: {fileID: 1897543284}
+  <Movement>k__BackingField: {fileID: 8636627727337990040}
+  <ExposedImage>k__BackingField: {fileID: 451743862}
+  <ExposedIcon>k__BackingField: {fileID: 3189471319018967100, guid: 09a2f1899af47bb498df8ec50eec62e9, type: 3}
+  <NoExposedIcon>k__BackingField: {fileID: 6927564226480845047, guid: 09a2f1899af47bb498df8ec50eec62e9, type: 3}
 --- !u!114 &8636627727337990052
 MonoBehaviour:
   m_ObjectHideFlags: 0

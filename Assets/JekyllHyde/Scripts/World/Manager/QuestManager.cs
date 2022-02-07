@@ -1,4 +1,5 @@
 using DG.Tweening;
+using JekyllHyde.Entity.Hyde;
 using JekyllHyde.Entity.Player.Manager;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace JekyllHyde.World.Manager
         [field: SerializeField] private Text QuestOnScreen { get; set; }
         [field: SerializeField] private PlayerManager PlayerManager { get; set; }
         [field: SerializeField] private DialogManager DialogManager { get; set; }
+        [field: SerializeField] private HydeSimulator HydeAi { get; set; }
         [field: SerializeField] private GameObject EndGameScreen { get; set; }
         [field: SerializeField] private Text EndGameText1 { get; set; }
         [field: SerializeField] private Text EndGameText2 { get; set; }
@@ -47,7 +49,8 @@ namespace JekyllHyde.World.Manager
                     StartCoroutine(Sleeping());
                     break;
                 case 13:
-                    // Enable Hyde
+                    HydeAi.EnabledHyde = true;
+                    PlayerManager.Mechanics(true);
                     break;
             }
         }
@@ -182,6 +185,7 @@ namespace JekyllHyde.World.Manager
 
         private void Start()
         {
+            Step = 13;
             GameUpdate();
         }
     }
