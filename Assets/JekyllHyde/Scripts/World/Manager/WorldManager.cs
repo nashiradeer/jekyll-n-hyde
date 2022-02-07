@@ -22,6 +22,8 @@ namespace JekyllHyde.World.Manager
         [field: SerializeField] public List<WorldManagerElement> Worlds { get; private set; }
         [field: SerializeField] public List<WorldExposedZone> ExposedZones { get; private set; }
 
+        private bool GameOver = false;
+
         public int CurrentWorldIndex { get; set; }
         public WorldExposedZone[] CurrentExposedZones { get; set; }
 
@@ -79,6 +81,17 @@ namespace JekyllHyde.World.Manager
                 else
                 {
                     CurrentHyde.transform.position = new Vector3(ExposedZones[exposedZone].HydeZeroX + x, ExposedZones[exposedZone].WorldY, 0);
+                }
+
+                float killDistance = 2f;
+                float playerDistance = CurrentHyde.transform.position.x - Player.transform.position.x;
+                if (playerDistance < killDistance && playerDistance > -killDistance)
+                {
+                    if (!GameOver && !Player.GetComponent<PlayerHide>().IsHidden && Player.GetComponent<PlayerExpose>().IsExposed)
+                    {
+                        GameOver = true;
+                        Debug.LogWarning("WorldManager: Game Over.");
+                    }
                 }
             }
             else DeleteHyde();

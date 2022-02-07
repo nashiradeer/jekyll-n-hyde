@@ -3191,7 +3191,7 @@ MonoBehaviour:
       - <LastRoom>k__BackingField: 1
         <SpawnX>k__BackingField: 6.84
   <ExposedZones>k__BackingField:
-  - <RelatedWorld>k__BackingField: 6
+  - <RelatedWorld>k__BackingField: 5
     <WorldY>k__BackingField: -0.61
     <HydeZeroX>k__BackingField: -15
     <LeftX>k__BackingField: 14.74
@@ -3936,6 +3936,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <WorldManager>k__BackingField: {fileID: 1897543284}
   <Movement>k__BackingField: {fileID: 8636627727337990040}
+  <HydeAi>k__BackingField: {fileID: 1350162200}
   <ExposedImage>k__BackingField: {fileID: 451743862}
   <ExposedIcon>k__BackingField: {fileID: 3189471319018967100, guid: 09a2f1899af47bb498df8ec50eec62e9, type: 3}
   <NoExposedIcon>k__BackingField: {fileID: 6927564226480845047, guid: 09a2f1899af47bb498df8ec50eec62e9, type: 3}
