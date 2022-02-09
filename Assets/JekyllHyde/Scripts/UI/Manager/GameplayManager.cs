@@ -1,5 +1,6 @@
 using JekyllHyde.Entity.Player.Mechanics;
 using JekyllHyde.Entity.Player.World;
+using JekyllHyde.World.Manager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -58,6 +59,7 @@ namespace JekyllHyde.UI.Manager
             Time.timeScale = 1;
 
             for (int i = 4;i <= 8;i++) PlayerInventory.Items[i] = false;
+            if (QuestManager.Step < 8) QuestManager.Step = 0;
 
             SceneManager.LoadScene(1);
         }

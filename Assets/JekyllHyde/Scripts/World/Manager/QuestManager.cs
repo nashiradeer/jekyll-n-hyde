@@ -26,7 +26,7 @@ namespace JekyllHyde.World.Manager
         [field: SerializeField] private Text EndGameText3 { get; set; }
         [field: SerializeField] private List<string> StepDescriptions { get; set; }
 
-        public static int Step { get; private set; } = 0;
+        public static int Step { get; set; }
 
         private bool TriggerLocked { get; set; }
 
