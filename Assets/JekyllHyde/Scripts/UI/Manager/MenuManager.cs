@@ -21,5 +21,11 @@ namespace JekyllHyde.UI.Manager
         {
             if (!IsLoading) Application.Quit();
         }
+
+        private void Start()
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+        }
     }
 }

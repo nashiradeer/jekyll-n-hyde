@@ -7,6 +7,8 @@ namespace JekyllHyde.UI.Manager
     {
         void Start()
         {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
             SceneManager.LoadScene(1);
         }
     }
