@@ -82,7 +82,7 @@ namespace JekyllHyde.World.Manager
                     CurrentHyde.transform.position = new Vector3(ExposedZones[exposedZone].HydeZeroX + x, ExposedZones[exposedZone].WorldY, 0);
                 }
 
-                float killDistance = 2f;
+                float killDistance = 1.65f;
                 float playerDistance = CurrentHyde.transform.position.x - Player.transform.position.x;
                 if (playerDistance < killDistance && playerDistance > -killDistance)
                 {
