@@ -1535,6 +1535,8 @@ MonoBehaviour:
   <PauseScreen>k__BackingField: {fileID: 2000908799}
   <GameOverScreen>k__BackingField: {fileID: 1254616789}
   <PlayerAudio>k__BackingField: {fileID: 1674339741}
+  <Keypad1>k__BackingField: {fileID: 1486773578}
+  <Keypad2>k__BackingField: {fileID: 1877466434}
 --- !u!1 &1091711905
 GameObject:
   m_ObjectHideFlags: 0
@@ -2247,7 +2249,6 @@ MonoBehaviour:
   <Default>k__BackingField: {fileID: 21300000, guid: 8e4950bdc49187c4dad5c1bf1cd79bf5, type: 3}
   <Correct>k__BackingField: {fileID: 21300000, guid: 80397fe8306694947990ce024269f5cf, type: 3}
   <PlayerManager>k__BackingField: {fileID: 8636627727337990044}
-  <GameplayManager>k__BackingField: {fileID: 1032869452}
   OnKeyCorrected:
     m_PersistentCalls:
       m_Calls: []
@@ -3275,7 +3276,6 @@ MonoBehaviour:
   <Default>k__BackingField: {fileID: 21300000, guid: 393497e0ae09961429dac21c6cecff2c, type: 3}
   <Correct>k__BackingField: {fileID: 21300000, guid: fc860ca7c42433a418eb90f5956efe7f, type: 3}
   <PlayerManager>k__BackingField: {fileID: 8636627727337990044}
-  <GameplayManager>k__BackingField: {fileID: 1032869452}
   OnKeyCorrected:
     m_PersistentCalls:
       m_Calls: []
