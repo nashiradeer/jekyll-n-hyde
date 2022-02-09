@@ -29,14 +29,14 @@ namespace JekyllHyde.Entity.Player.Mechanics
 
             Sprite.MoveAnimation(Moving, direction);
 
-            if (Moving && !Audio.WalkSound.isPlaying) Audio.WalkSound.Play();
-            else if (!Moving) Audio.WalkSound.Stop();
+            if (Moving) Audio.PlayWalk();
+            else Audio.StopWalk();
 
             if (WorldManager.CurrentWorldIndex == 0 && QuestManager.Step == 3 && transform.position.x > 2) QuestManager.GreenPotionTrigger();
             if (WorldManager.CurrentWorldIndex == 3 && QuestManager.Step == 6 && transform.position.x > -0.05) QuestManager.LucyTrigger();
         }
 
-        protected void FixedUpdate()
+        private void FixedUpdate()
         {
             Move(Input.GetAxisRaw("Horizontal") * Speed);
         }
