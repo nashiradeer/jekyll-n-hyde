@@ -13,8 +13,8 @@ namespace JekyllHyde.UI
         [field: SerializeField] private Sprite Default { get; set; }
         [field: SerializeField] private Sprite Correct { get; set; }
         [field: SerializeField] private PlayerManager PlayerManager { get; set; }
-        [field: SerializeField] private GameplayManager GameplayManager { get; set; }
 
+        private bool DisableWrite { get; set; }
         private string CorrectKey { get; set; }
         private string CurrentKey { get; set; }
         public bool KeypadEnabled { get; set; }
@@ -23,35 +23,40 @@ namespace JekyllHyde.UI
 
         public void Open(string correctKey)
         {
-            GameplayManager.EnabledPause = false;
-
+            if (KeypadEnabled) return;
             PlayerManager.Mechanics(false);
 
             CorrectKey = correctKey;
 
+            DisableWrite = false;
             KeypadEnabled = true;
+
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
 
             gameObject.SetActive(true);
         }
 
         public void Close()
         {
-            GameplayManager.EnabledPause = true;
-
+            if (!KeypadEnabled) return;
             OnKeyCorrected.RemoveAllListeners();
             KeypadEnabled = false;
 
             CorrectKey = "";
             CurrentKey = "";
 
-            gameObject.SetActive(false);
-
             PlayerManager.Mechanics(true);
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
+            gameObject.SetActive(false);
         }
 
         public void Write(string code)
         {
-            if (!KeypadEnabled) return;
+            if (!KeypadEnabled && !DisableWrite) return;
 
             string newKey = CurrentKey += code;
             Debug.Log($"KeypadController: Write requested, result {newKey}.");
@@ -70,7 +75,7 @@ namespace JekyllHyde.UI
         private IEnumerator CorrectKeyAnim()
         {
             KeypadUI.sprite = Correct;
-            KeypadEnabled = false;
+            DisableWrite = true;
 
             yield return new WaitForSeconds(1f);
 
@@ -82,7 +87,7 @@ namespace JekyllHyde.UI
             Close();
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
             if (Input.GetKey(KeyCode.Escape) && KeypadEnabled) Close();
         }

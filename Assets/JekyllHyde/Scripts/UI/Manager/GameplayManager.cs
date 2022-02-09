@@ -14,6 +14,8 @@ namespace JekyllHyde.UI.Manager
         [field: SerializeField] private GameObject PauseScreen { get; set; }
         [field: SerializeField] private GameObject GameOverScreen { get; set; }
         [field: SerializeField] private PlayerAudio PlayerAudio { get; set; }
+        [field: SerializeField] private KeypadController Keypad1 { get; set; }
+        [field: SerializeField] private KeypadController Keypad2 { get; set; }
 
         private bool Paused { get; set; }
         private bool GameOver { get; set; }
@@ -49,6 +51,9 @@ namespace JekyllHyde.UI.Manager
 
                 Time.timeScale = 1;
 
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+
                 GameplayScreen.SetActive(true);
                 PauseScreen.SetActive(false);
             }
@@ -66,7 +71,7 @@ namespace JekyllHyde.UI.Manager
 
         private void Update()
         {
-            if (Input.GetKey(KeyCode.Escape) && EnabledPause && !PausePressed)
+            if (Input.GetKey(KeyCode.Escape) && !PausePressed)
             {
                 PausePressed = true;
                 if (Paused)
@@ -77,24 +82,38 @@ namespace JekyllHyde.UI.Manager
 
                     Time.timeScale = 1;
 
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
+
                     GameplayScreen.SetActive(true);
                     PauseScreen.SetActive(false);
                 }
                 else
                 {
-                    Paused = true;
+                    if (EnabledPause && !Keypad1.KeypadEnabled && !Keypad2.KeypadEnabled)
+                    {
+                        Paused = true;
 
-                    PlayerAudio.EnableSound = false;
-                    PlayerAudio.StopWalk();
+                        PlayerAudio.EnableSound = false;
+                        PlayerAudio.StopWalk();
 
-                    Time.timeScale = 0;
+                        Time.timeScale = 0;
 
-                    GameplayScreen.SetActive(false);
-                    PauseScreen.SetActive(true);
+                        Cursor.lockState = CursorLockMode.Confined;
+                        Cursor.visible = true;
+
+                        GameplayScreen.SetActive(false);
+                        PauseScreen.SetActive(true);
+                    }
                 }
             }
+            else if (!Input.GetKey(KeyCode.Escape) && PausePressed) PausePressed = false;
+        }
 
-            if (!Input.GetKey(KeyCode.Escape)) PausePressed = false;
+        private void Start()
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
 }
