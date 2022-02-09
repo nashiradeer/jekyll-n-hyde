@@ -32,15 +32,16 @@ namespace JekyllHyde.World.Manager
 
         public void NextStep()
         {
-            QuestOnScreen.text = StepDescriptions[++Step];
-            Debug.Log($"QuestManager: Executing update for step {Step}.");
+            Step++;
+            Debug.Log($"QuestManager: Triggering the next step {Step}.");
             GameUpdate();
             TriggerLocked = false;
         }
 
         private void GameUpdate()
         {
-            Debug.Log($"QuestManager: Update requested for step {Step}.");
+            Debug.Log($"QuestManager: Executing the step {Step}.");
+            QuestOnScreen.text = StepDescriptions[++Step];
             switch (Step)
             {
                 case 0:
@@ -114,14 +115,11 @@ namespace JekyllHyde.World.Manager
 
             yield return new WaitForSeconds(1.2f);
 
-            // Sleep
-
             VisionOverlay.color = new Color(0, 0, 0, 1);
 
             yield return new WaitForSeconds(2f);
 
             yield return VisionOverlay.DOFade(0, 2).WaitForCompletion();
-            // Wake Up and Scream
 
             yield return new WaitForSeconds(0.5f);
 
@@ -194,7 +192,6 @@ namespace JekyllHyde.World.Manager
 
         private void Start()
         {
-            QuestOnScreen.text = StepDescriptions[Step];
             GameUpdate();
         }
     }
