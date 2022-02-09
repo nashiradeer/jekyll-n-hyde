@@ -41,7 +41,7 @@ namespace JekyllHyde.World.Manager
         private void GameUpdate()
         {
             Debug.Log($"QuestManager: Executing the step {Step}.");
-            QuestOnScreen.text = StepDescriptions[++Step];
+            QuestOnScreen.text = StepDescriptions[Step];
             switch (Step)
             {
                 case 0:
