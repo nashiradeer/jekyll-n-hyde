@@ -2,6 +2,7 @@ using DG.Tweening;
 using JekyllHyde.Entity;
 using JekyllHyde.Entity.Player.Mechanics;
 using JekyllHyde.Entity.Player.World;
+using JekyllHyde.UI.Manager;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,11 +19,9 @@ namespace JekyllHyde.World.Manager
         [field: SerializeField] public int InitialWorld { get; set; }
         [field: SerializeField] public GameObject Player { get; set; }
         [field: SerializeField] public GameObject HydePrefab { get; set; }
-        //[field: SerializeField] public HydeSimulator HydeAi { get; set; } = null;
+        [field: SerializeField] private GameplayManager GameplayManager { get; set; }
         [field: SerializeField] public List<WorldManagerElement> Worlds { get; private set; }
         [field: SerializeField] public List<WorldExposedZone> ExposedZones { get; private set; }
-
-        private bool GameOver = false;
 
         public int CurrentWorldIndex { get; set; }
         public WorldExposedZone[] CurrentExposedZones { get; set; }
@@ -87,10 +86,9 @@ namespace JekyllHyde.World.Manager
                 float playerDistance = CurrentHyde.transform.position.x - Player.transform.position.x;
                 if (playerDistance < killDistance && playerDistance > -killDistance)
                 {
-                    if (!GameOver && !Player.GetComponent<PlayerHide>().IsHidden && Player.GetComponent<PlayerExpose>().IsExposed)
+                    if (!Player.GetComponent<PlayerHide>().IsHidden && Player.GetComponent<PlayerExpose>().IsExposed)
                     {
-                        GameOver = true;
-                        Debug.LogWarning("WorldManager: Game Over.");
+                        GameplayManager.TriggerGameOver();
                     }
                 }
             }
