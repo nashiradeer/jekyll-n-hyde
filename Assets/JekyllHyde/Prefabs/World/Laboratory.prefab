@@ -32,8 +32,8 @@ Transform:
   - {fileID: 881202952288434640}
   - {fileID: 5294103361901801306}
   - {fileID: 9143143459855340591}
-  - {fileID: 1534431057392097389}
   - {fileID: 2224644594733159335}
+  - {fileID: 1534431057392097389}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -199,7 +199,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.031878293, y: -3.9526196}
+  m_Offset: {x: -0.065533936, y: -3.9526196}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -210,7 +210,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.102382064, y: 3.4288254}
+  m_Size: {x: 0.53099644, y: 3.4288254}
   m_EdgeRadius: 0
 --- !u!1 &3501964599399909146
 GameObject:
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 2669807576761303081}
   - component: {fileID: 5522501231371990358}
   m_Layer: 0
-  m_Name: Potion Mixer
+  m_Name: Lab Table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -242,7 +242,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3335844032669793181}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2669807576761303081
 BoxCollider2D:
@@ -257,7 +257,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.074897885, y: -2.0596962}
+  m_Offset: {x: -0.11184111, y: -2.0596962}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -268,7 +268,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.10122371, y: 3.2219753}
+  m_Size: {x: 1.6897757, y: 3.2219753}
   m_EdgeRadius: 0
 --- !u!114 &5522501231371990358
 MonoBehaviour:
@@ -463,7 +463,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3335844032669793181}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &982220160388464850
 SpriteRenderer:
@@ -543,7 +543,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.031878293, y: -2.4209785}
+  m_Offset: {x: 0.32894397, y: -2.4209785}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -554,7 +554,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.102382064, y: 2.9705386}
+  m_Size: {x: 0.57144403, y: 2.9705386}
   m_EdgeRadius: 0
 --- !u!1 &8366073838395515299
 GameObject:
