@@ -1,10 +1,12 @@
 using DG.Tweening;
 using JekyllHyde.Entity.Hyde;
 using JekyllHyde.Entity.Player.Manager;
+using JekyllHyde.Entity.Player.Mechanics;
+using JekyllHyde.UI.Manager;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace JekyllHyde.World.Manager
@@ -16,6 +18,7 @@ namespace JekyllHyde.World.Manager
         [field: SerializeField] private Text QuestOnScreen { get; set; }
         [field: SerializeField] private PlayerManager PlayerManager { get; set; }
         [field: SerializeField] private DialogManager DialogManager { get; set; }
+        [field: SerializeField] private GameplayManager GameplayManager { get; set; }
         [field: SerializeField] private HydeSimulator HydeAi { get; set; }
         [field: SerializeField] private GameObject EndGameScreen { get; set; }
         [field: SerializeField] private Text EndGameText1 { get; set; }
@@ -23,7 +26,7 @@ namespace JekyllHyde.World.Manager
         [field: SerializeField] private Text EndGameText3 { get; set; }
         [field: SerializeField] private List<string> StepDescriptions { get; set; }
 
-        public int Step { get; private set; }
+        public static int Step { get; private set; } = 0;
 
         private bool TriggerLocked { get; set; }
 
@@ -48,7 +51,7 @@ namespace JekyllHyde.World.Manager
                     PlayerManager.Mechanics(false);
                     StartCoroutine(Sleeping());
                     break;
-                case 13:
+                case 8:
                     HydeAi.EnabledHyde = true;
                     PlayerManager.Mechanics(true);
                     break;
@@ -71,7 +74,10 @@ namespace JekyllHyde.World.Manager
             EndGameText2.DOFade(0, 5f);
             yield return EndGameText3.DOFade(0, 5f).WaitForCompletion();
 
-            Application.Quit();
+            Step = 0;
+            for (int i = 0; i <= 8; i++) PlayerInventory.Items[i] = false;
+
+            SceneManager.LoadScene(1);
         }
 
         private IEnumerator FindExit()
@@ -178,14 +184,17 @@ namespace JekyllHyde.World.Manager
             if (TriggerLocked) return;
             TriggerLocked = true;
 
+            GameplayManager.EnabledPause = false;
+            HydeAi.EnabledHyde = false;
+
             PlayerManager.Mechanics(false);
-            // Disable Hyde
+
             StartCoroutine(EndGame());
         }
 
         private void Start()
         {
-            Step = 13;
+            QuestOnScreen.text = StepDescriptions[Step];
             GameUpdate();
         }
     }

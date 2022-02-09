@@ -14,15 +14,14 @@ namespace JekyllHyde.World.Interaction
         {
             if (!alternativeKey)
             {
-                player.Manager.Inventory.Items[InventoryNumber] = true;
+                PlayerInventory.Items[InventoryNumber] = true;
                 gameObject.SetActive(false);
             }
         }
 
         private void Start()
         {
-            PlayerManager manager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
-            if (manager.Inventory.Items[InventoryNumber]) gameObject.SetActive(false);
+            if (PlayerInventory.Items[InventoryNumber]) gameObject.SetActive(false);
         }
     }
 }

@@ -14,8 +14,8 @@ namespace JekyllHyde.World.Interaction
         {
             if (QuestManager.Step >= 8) player.Manager.DialogManager.Show("Senha da sala secreta 413....", 1.2f, 0.7f);
             else if (QuestManager.Step == 4) QuestManager.NextStep();
-            else if (player.Manager.Inventory.Items[3] && QuestManager.Step == 2) QuestManager.NextStep();
-            else if (player.Manager.Inventory.Items[2] && QuestManager.Step == 1) QuestManager.NextStep();
+            else if (PlayerInventory.Items[3] && QuestManager.Step == 2) QuestManager.NextStep();
+            else if (PlayerInventory.Items[2] && QuestManager.Step == 1) QuestManager.NextStep();
         }
 
         private void Start()

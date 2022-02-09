@@ -17,7 +17,7 @@ namespace JekyllHyde.World.Interaction
         {
             if (alternativeKey)
             {
-                if (QuestManager.Step == 8 && player.Manager.Inventory.Items[7] && player.Manager.Inventory.Items[8] && player.Manager.Inventory.Items[6])
+                if (QuestManager.Step == 8 && PlayerInventory.Items[7] && PlayerInventory.Items[8] && PlayerInventory.Items[6])
                 {
                     QuestManager.EndGameTrigger();
                 }
@@ -26,15 +26,15 @@ namespace JekyllHyde.World.Interaction
             }
             else
             {
-                if (!player.Manager.Inventory.Items[7] && player.Manager.Inventory.Items[4])
+                if (!PlayerInventory.Items[7] && PlayerInventory.Items[4])
                 {
                     Padlock1.SetActive(false);
-                    player.Manager.Inventory.Items[7] = true;
+                    PlayerInventory.Items[7] = true;
                 }
-                else if (!player.Manager.Inventory.Items[8] && player.Manager.Inventory.Items[5])
+                else if (!PlayerInventory.Items[8] && PlayerInventory.Items[5])
                 {
                     Padlock2.SetActive(false);
-                    player.Manager.Inventory.Items[8] = true;
+                    PlayerInventory.Items[8] = true;
                 }
             }
         }
@@ -43,9 +43,8 @@ namespace JekyllHyde.World.Interaction
         {
             QuestManager = GameObject.FindGameObjectWithTag("QuestManager").GetComponent<QuestManager>();
 
-            PlayerManager manager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
-            if (manager.Inventory.Items[7]) Padlock1.SetActive(false);
-            if (manager.Inventory.Items[8]) Padlock2.SetActive(false);
+            if (PlayerInventory.Items[7]) Padlock1.SetActive(false);
+            if (PlayerInventory.Items[8]) Padlock2.SetActive(false);
         }
     }
 }

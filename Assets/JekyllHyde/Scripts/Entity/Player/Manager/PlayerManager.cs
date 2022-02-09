@@ -9,7 +9,6 @@ namespace JekyllHyde.Entity.Player.Manager
         [field: SerializeField] public PlayerMovement Movement { get; set; }
         [field: SerializeField] public PlayerInteract Interact { get; set; }
         [field: SerializeField] public PlayerHide Hide { get; set; }
-        [field: SerializeField] public PlayerInventory Inventory { get; set; }
 
         public void Mechanics(bool enabled)
         {

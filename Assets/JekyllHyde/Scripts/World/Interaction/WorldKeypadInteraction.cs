@@ -21,22 +21,22 @@ namespace JekyllHyde.World.Interaction
         {
             if (alternativeKey)
             {
-                if (player.Manager.Inventory.Items[InventoryNumber])
+                if (PlayerInventory.Items[InventoryNumber])
                 {
-                    LoadWorld(player.Manager.Inventory);
+                    LoadWorld();
                 }
                 else
                 {
                     KeypadController keypad = (!UseAlternativeKeypad) ? player.Keypad1 : player.Keypad2;
-                    keypad.OnKeyCorrected.AddListener(() => LoadWorld(player.Manager.Inventory));
+                    keypad.OnKeyCorrected.AddListener(LoadWorld);
                     keypad.Open(Password);
                 }
             }
         }
 
-        private void LoadWorld(PlayerInventory inventory)
+        private void LoadWorld()
         {
-            if (InventoryNumber >= 0) inventory.Items[InventoryNumber] = true;
+            if (InventoryNumber >= 0) PlayerInventory.Items[InventoryNumber] = true;
             WorldManager.LoadWorld(NewWorld, CurrentWorld);
         }
 

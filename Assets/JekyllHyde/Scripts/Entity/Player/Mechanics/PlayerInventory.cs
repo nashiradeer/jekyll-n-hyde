@@ -1,8 +1,6 @@
-﻿using UnityEngine;
-
-namespace JekyllHyde.Entity.Player.Mechanics
+﻿namespace JekyllHyde.Entity.Player.Mechanics
 {
-    public class PlayerInventory : MonoBehaviour
+    public static class PlayerInventory
     {
         /** All indexes used by the inventory for the game items
          * 
@@ -17,6 +15,6 @@ namespace JekyllHyde.Entity.Player.Mechanics
          * Key 2 Used                  = 8
          */
 
-        public bool[] Items { get; private set; } = new bool[9];
+        public static bool[] Items { get; private set; } = new bool[9];
     }
 }
