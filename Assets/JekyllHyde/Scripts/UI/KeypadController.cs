@@ -1,4 +1,5 @@
 using JekyllHyde.Entity.Player.Manager;
+using JekyllHyde.UI.Manager;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,6 +13,7 @@ namespace JekyllHyde.UI
         [field: SerializeField] private Sprite Default { get; set; }
         [field: SerializeField] private Sprite Correct { get; set; }
         [field: SerializeField] private PlayerManager PlayerManager { get; set; }
+        [field: SerializeField] private GameplayManager GameplayManager { get; set; }
 
         private string CorrectKey { get; set; }
         private string CurrentKey { get; set; }
@@ -21,6 +23,8 @@ namespace JekyllHyde.UI
 
         public void Open(string correctKey)
         {
+            GameplayManager.EnabledPause = false;
+
             PlayerManager.Mechanics(false);
 
             CorrectKey = correctKey;
@@ -32,6 +36,8 @@ namespace JekyllHyde.UI
 
         public void Close()
         {
+            GameplayManager.EnabledPause = true;
+
             OnKeyCorrected.RemoveAllListeners();
             KeypadEnabled = false;
 
