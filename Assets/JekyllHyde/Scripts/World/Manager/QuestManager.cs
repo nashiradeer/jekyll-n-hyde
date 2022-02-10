@@ -13,6 +13,7 @@ namespace JekyllHyde.World.Manager
 {
     public class QuestManager : MonoBehaviour
     {
+        [field: SerializeField] private Camera MainCamera { get; set; }
         [field: SerializeField] private Image VisionOverlay { get; set; }
         [field: SerializeField] private Image Tutorial { get; set; }
         [field: SerializeField] private Text QuestOnScreen { get; set; }
@@ -24,6 +25,8 @@ namespace JekyllHyde.World.Manager
         [field: SerializeField] private Text EndGameText1 { get; set; }
         [field: SerializeField] private Text EndGameText2 { get; set; }
         [field: SerializeField] private Text EndGameText3 { get; set; }
+        [field: SerializeField] private GameObject GlobalLight { get; set; }
+        [field: SerializeField] private GameObject PlayerLight { get; set; }
         [field: SerializeField] private List<string> StepDescriptions { get; set; }
 
         public static int Step { get; set; }
@@ -54,6 +57,12 @@ namespace JekyllHyde.World.Manager
                     break;
                 case 8:
                     HydeAi.EnabledHyde = true;
+
+                    PlayerLight.SetActive(true);
+                    GlobalLight.SetActive(false);
+
+                    MainCamera.backgroundColor = Color.black;
+
                     PlayerManager.Mechanics(true);
                     break;
             }
@@ -98,6 +107,11 @@ namespace JekyllHyde.World.Manager
             yield return new WaitForSeconds(0.5f);
             VisionOverlay.color = new Color(0, 0, 0, 0);
 
+            PlayerLight.SetActive(true);
+            GlobalLight.SetActive(false);
+
+            MainCamera.backgroundColor = Color.black;
+
             yield return new WaitForSeconds(1f);
             PlayerManager.Mechanics(true);
             NextStep();
@@ -140,7 +154,7 @@ namespace JekyllHyde.World.Manager
 
         private IEnumerator GameplayStart()
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(3f);
             yield return Tutorial.DOFade(0f, 1.5f).WaitForCompletion();
             Tutorial.gameObject.SetActive(false);
 

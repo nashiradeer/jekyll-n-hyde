@@ -5,6 +5,7 @@ namespace JekyllHyde.UI.Manager
     public class MenuManager : MonoBehaviour
     {
         [field: SerializeField] private LoadingManager Loading { get; set; }
+        [field: SerializeField] private AudioSource Audio { get; set; }
 
         private bool IsLoading { get; set; }
 
@@ -24,6 +25,7 @@ namespace JekyllHyde.UI.Manager
 
         private void Start()
         {
+            Audio.Play();
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
         }

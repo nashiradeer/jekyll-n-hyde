@@ -1,6 +1,7 @@
 using JekyllHyde.Entity.Player.Mechanics;
 using JekyllHyde.Entity.Player.World;
 using JekyllHyde.World.Manager;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,6 +17,9 @@ namespace JekyllHyde.UI.Manager
         [field: SerializeField] private PlayerAudio PlayerAudio { get; set; }
         [field: SerializeField] private KeypadController Keypad1 { get; set; }
         [field: SerializeField] private KeypadController Keypad2 { get; set; }
+        [field: SerializeField] private GameObject MenuButton { get; set; }
+        [field: SerializeField] private AudioSource PlayerDie { get; set; }
+        [field: SerializeField] private AudioSource Music { get; set; }
 
         private bool Paused { get; set; }
         private bool GameOver { get; set; }
@@ -36,9 +40,22 @@ namespace JekyllHyde.UI.Manager
 
                 Time.timeScale = 0;
 
+                Cursor.lockState = CursorLockMode.Confined;
+                Cursor.visible = true;
+
                 GameplayScreen.SetActive(false);
                 GameOverScreen.SetActive(true);
+
+                StartCoroutine(GameOverAnimation());
             }
+        }
+
+        private IEnumerator GameOverAnimation()
+        {
+            PlayerDie.Play();
+            yield return new WaitForSecondsRealtime(PlayerDie.clip.length + 1);
+            Music.Play();
+            MenuButton.SetActive(true);
         }
 
         public void ResumeGame()
@@ -114,6 +131,8 @@ namespace JekyllHyde.UI.Manager
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+
+            TriggerGameOver();
         }
     }
 }

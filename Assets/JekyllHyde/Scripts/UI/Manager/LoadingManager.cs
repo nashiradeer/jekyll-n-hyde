@@ -9,6 +9,8 @@ namespace JekyllHyde.UI.Manager
     public class LoadingManager : MonoBehaviour
     {
         [field: SerializeField] private Image LoadingScreen { get; set; }
+        [field: SerializeField] private AudioSource Audio { get; set; }
+
         private AsyncOperation Loading { get; set; }
 
         public void StartLoad()
@@ -22,6 +24,7 @@ namespace JekyllHyde.UI.Manager
 
         private IEnumerator LoadAnimation()
         {
+            Audio.DOFade(0, 2);
             yield return LoadingScreen.DOFade(1, 2).WaitForCompletion();
             Loading.allowSceneActivation = true;
         }

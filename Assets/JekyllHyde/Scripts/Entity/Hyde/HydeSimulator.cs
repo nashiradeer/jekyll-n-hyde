@@ -13,8 +13,7 @@ namespace JekyllHyde.Entity.Hyde
 
         [field: SerializeField] private float X { get; set; }
         [field: SerializeField] public int CurrentZone { get; private set; }
-
-        public bool EnabledHyde { get; set; }
+        [field: SerializeField] public bool EnabledHyde { get; set; }
 
         public EntityDirection Direction { get; private set; }
 
