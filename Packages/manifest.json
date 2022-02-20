@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.nashiradeer.skyerbuilder": "file:/home/nashira/Downloads/com.nashiradeer.skyerbuilder-1.0.0.tgz",
     "com.unity.2d.animation": "5.1.0",
     "com.unity.2d.pixel-perfect": "4.0.1",
     "com.unity.2d.psdimporter": "4.2.0",
