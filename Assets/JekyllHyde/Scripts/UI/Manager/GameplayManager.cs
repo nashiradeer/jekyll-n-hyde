@@ -126,13 +126,5 @@ namespace JekyllHyde.UI.Manager
             }
             else if (!Input.GetKey(KeyCode.Escape) && PausePressed) PausePressed = false;
         }
-
-        private void Start()
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-
-            TriggerGameOver();
-        }
     }
 }
