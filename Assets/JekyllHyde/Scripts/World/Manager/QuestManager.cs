@@ -49,7 +49,10 @@ namespace JekyllHyde.World.Manager
             {
                 case 0:
                     Tutorial.gameObject.SetActive(true);
-                    StartCoroutine(GameplayStart());
+
+                    Cursor.lockState = CursorLockMode.Confined;
+                    Cursor.visible = true;
+
                     break;
                 case 5:
                     PlayerManager.Mechanics(false);
@@ -154,7 +157,6 @@ namespace JekyllHyde.World.Manager
 
         private IEnumerator GameplayStart()
         {
-            yield return new WaitForSeconds(3f);
             yield return Tutorial.DOFade(0f, 1.5f).WaitForCompletion();
             Tutorial.gameObject.SetActive(false);
 
@@ -162,6 +164,17 @@ namespace JekyllHyde.World.Manager
 
             PlayerManager.Mechanics(true);
             NextStep();
+        }
+
+        public void TutorialTrigger()
+        {
+            if (TriggerLocked) return;
+            TriggerLocked = true;
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
+            StartCoroutine(GameplayStart());
         }
 
         public void GreenPotionTrigger()
