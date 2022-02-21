@@ -1,5 +1,4 @@
 using JekyllHyde.Entity.Player.Manager;
-using JekyllHyde.UI.Manager;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
