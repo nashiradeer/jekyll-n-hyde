@@ -61,6 +61,8 @@ namespace JekyllHyde.World.Manager
             if (FadeIn != null) FadeIn.Kill();
             WorldLoading.color = new Color(0, 0, 0, 1);
 
+            if (CurrentHyde != null) DeleteHyde();
+
             if (CurrentWorldObj != null)
             {
                 Destroy(CurrentWorldObj);
