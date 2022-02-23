@@ -13,12 +13,13 @@ namespace JekyllHyde.UI.Manager
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            StartCoroutine(RunSplashes());
         }
 
         private IEnumerator RunSplashes()
         {
             yield return new WaitForSeconds(2f);
-            yield return NashiraDeerSplash.Start();
+            yield return NashiraDeerSplash.StartSplash();
             SceneManager.LoadScene(1);
         }
     }
