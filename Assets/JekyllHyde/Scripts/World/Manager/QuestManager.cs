@@ -66,6 +66,9 @@ namespace JekyllHyde.World.Manager
 
                     MainCamera.backgroundColor = Color.black;
 
+                    Cursor.lockState = CursorLockMode.Confined;
+                    Cursor.visible = true;
+
                     PlayerManager.Mechanics(true);
                     break;
             }
