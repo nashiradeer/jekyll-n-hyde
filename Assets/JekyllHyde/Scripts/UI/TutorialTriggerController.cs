@@ -7,9 +7,9 @@ namespace JekyllHyde.UI
     {
         [field: SerializeField] private QuestManager QuestManager { get; set; }
 
-        private void FixedUpdate()
+        private void Update()
         {
-            if (QuestManager.Step == 0 && Input.GetMouseButton(0))
+            if (QuestManager.Step == 0 && Input.GetMouseButtonDown(0))
             {
                 QuestManager.TutorialTrigger();
             }
