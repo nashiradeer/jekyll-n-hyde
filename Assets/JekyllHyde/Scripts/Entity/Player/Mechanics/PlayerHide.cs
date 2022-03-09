@@ -14,23 +14,24 @@ namespace JekyllHyde.Entity.Player.Mechanics
 
         private bool CanHide { get; set; }
 
-        private int CooldownTicks = 0;
-        private int CooldownTotal = 13;
+        private float Cooldown = 0;
+        private float CooldownTotal = 0.3f;
 
-        private void FixedUpdate()
+        private void Update()
         {
-            if (CooldownTicks > 0 && !IsHidden) CooldownTicks--;
+            if (Cooldown > 0 && !IsHidden) Cooldown -= Time.deltaTime;
 
-            if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && EnabledHide && CooldownTicks == 0 && !IsHidden && CanHide)
+            if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
             {
-                IsHidden = true;
-                Movement.EnabledMovement = false;
-                Sprite.HideAnimation(true);
-                Audio.HideSound.Play();
-                CooldownTicks = CooldownTotal;
-            }
-
-            if (!(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && IsHidden)
+                if (EnabledHide && Cooldown <= 0 && !IsHidden && CanHide)
+                {
+                    IsHidden = true;
+                    Movement.EnabledMovement = false;
+                    Sprite.HideAnimation(true);
+                    Audio.HideSound.Play();
+                    Cooldown = CooldownTotal;
+                }
+            } else if (IsHidden)
             {
                 IsHidden = false;
                 Movement.EnabledMovement = true;
