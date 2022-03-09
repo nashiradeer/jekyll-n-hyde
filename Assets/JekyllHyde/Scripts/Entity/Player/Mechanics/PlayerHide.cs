@@ -21,7 +21,7 @@ namespace JekyllHyde.Entity.Player.Mechanics
         {
             if (Cooldown > 0 && !IsHidden) Cooldown -= Time.deltaTime;
 
-            if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
             {
                 if (EnabledHide && Cooldown <= 0 && !IsHidden && CanHide)
                 {
@@ -31,7 +31,8 @@ namespace JekyllHyde.Entity.Player.Mechanics
                     Audio.HideSound.Play();
                     Cooldown = CooldownTotal;
                 }
-            } else if (IsHidden)
+            }
+            else if (IsHidden)
             {
                 IsHidden = false;
                 Movement.EnabledMovement = true;

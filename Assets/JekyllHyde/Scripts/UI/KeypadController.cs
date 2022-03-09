@@ -11,6 +11,7 @@ namespace JekyllHyde.UI
         [field: SerializeField] private Image KeypadUI { get; set; }
         [field: SerializeField] private Sprite Default { get; set; }
         [field: SerializeField] private Sprite Correct { get; set; }
+        [field: SerializeField] private AudioManager AudioManager { get; set; }
 
         private bool DisableWrite { get; set; }
         private string CorrectKey { get; set; }
@@ -66,6 +67,7 @@ namespace JekyllHyde.UI
             if (!IsOpen && !DisableWrite) return;
 
             string newKey = CurrentKey += code;
+            AudioManager.KeypadClick.Play();
             Debug.Log($"KeypadController: Write requested, result {newKey}.");
             
             if (newKey.Length >= CorrectKey.Length)

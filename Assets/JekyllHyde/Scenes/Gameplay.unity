@@ -2491,6 +2491,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1415578550}
+  - component: {fileID: 1415578552}
+  - component: {fileID: 1415578551}
   m_Layer: 0
   m_Name: Audio Manager
   m_TagString: AudioManager
@@ -2512,6 +2514,115 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1415578551
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415578549}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0f558343c51e7cd469e0b098b193c4f8, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1415578552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415578549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62aa216068280884cafa4fcb9d274815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <KeypadClick>k__BackingField: {fileID: 1415578551}
 --- !u!1 &1486773576
 GameObject:
   m_ObjectHideFlags: 0
@@ -2568,6 +2679,7 @@ MonoBehaviour:
   <KeypadUI>k__BackingField: {fileID: 1486773579}
   <Default>k__BackingField: {fileID: 21300000, guid: 8e4950bdc49187c4dad5c1bf1cd79bf5, type: 3}
   <Correct>k__BackingField: {fileID: 21300000, guid: 80397fe8306694947990ce024269f5cf, type: 3}
+  <AudioManager>k__BackingField: {fileID: 1415578552}
   OnKeyCorrected:
     m_PersistentCalls:
       m_Calls: []
@@ -3597,6 +3709,7 @@ MonoBehaviour:
   <KeypadUI>k__BackingField: {fileID: 1877466435}
   <Default>k__BackingField: {fileID: 21300000, guid: 393497e0ae09961429dac21c6cecff2c, type: 3}
   <Correct>k__BackingField: {fileID: 21300000, guid: fc860ca7c42433a418eb90f5956efe7f, type: 3}
+  <AudioManager>k__BackingField: {fileID: 1415578552}
   OnKeyCorrected:
     m_PersistentCalls:
       m_Calls: []
@@ -4800,7 +4913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <EnabledMovement>k__BackingField: 0
-  <Speed>k__BackingField: 2
+  <Speed>k__BackingField: 1.5
   <Body>k__BackingField: {fileID: 8636627727337990055}
   <Sprite>k__BackingField: {fileID: 8636627726518754543}
   <Audio>k__BackingField: {fileID: 1674339741}
