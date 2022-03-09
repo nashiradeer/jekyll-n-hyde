@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d594b9abbaf9c34b800ffdfb9019636, type: 3}
   m_Name: Simple Settings
   m_EditorClassIdentifier: 
-  BuildPath: /home/nashira/Unity/Build/JekyllHyde/Unity-JekyllHyde
+  BuildPath: D:/Owned Games/JekyllHyde
   PlaceInProductFolder: 0
   PlaceInVersionFolder: 1
   Windows: 1
@@ -30,4 +30,4 @@ MonoBehaviour:
   Stadia: 0
   tvOS: 0
   CloudRendenring: 0
-  DevelopmentBuild: 0
+  DevelopmentBuild: 1
