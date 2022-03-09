@@ -16,9 +16,9 @@ namespace JekyllHyde.Entity.Player.Mechanics
 
         public bool Moving { get; set; }
 
-        public void Move(float x)
+        private void Update()
         {
-            if (EnabledMovement) Body.velocity = new Vector2(x, Body.velocity.y);
+            if (EnabledMovement) Body.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Body.velocity.y);
             else Body.velocity = new Vector2(0, Body.velocity.y);
 
             Moving = Body.velocity.x != 0;
@@ -34,11 +34,6 @@ namespace JekyllHyde.Entity.Player.Mechanics
 
             if (WorldManager.CurrentWorldIndex == 0 && QuestManager.Step == 3 && transform.position.x > 2) QuestManager.GreenPotionTrigger();
             if (WorldManager.CurrentWorldIndex == 3 && QuestManager.Step == 6 && transform.position.x > -0.05) QuestManager.LucyTrigger();
-        }
-
-        private void FixedUpdate()
-        {
-            Move(Input.GetAxisRaw("Horizontal") * Speed);
         }
     }
 }
