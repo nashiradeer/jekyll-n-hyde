@@ -1,11 +1,14 @@
 ﻿using JekyllHyde.Entity.Player.Mechanics;
 using JekyllHyde.UI;
+using JekyllHyde.UI.Manager;
 using UnityEngine;
 
 namespace JekyllHyde.Entity.Player.Manager
 {
     public class PlayerManager : MonoBehaviour
     {
+        [field: SerializeField] private GameplayManager GameplayManager { get; set; }
+
         [field: SerializeField] public DialogManager DialogManager { get; set; }
         [field: SerializeField] public PlayerMovement Movement { get; set; }
         [field: SerializeField] public PlayerInteract Interact { get; set; }
@@ -37,7 +40,7 @@ namespace JekyllHyde.Entity.Player.Manager
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                if (CurrentMenu == null) // Action Pause Button
+                if (CurrentMenu == null) GameplayManager.PauseGame(this);
                 else CloseMenu();
             }
         }

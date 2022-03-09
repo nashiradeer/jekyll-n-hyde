@@ -62,6 +62,11 @@ namespace JekyllHyde.UI.Manager
             if (Pause.IsOpen) Pause.CurrentPlayer.CloseMenu();
         }
 
+        public void PauseGame(PlayerManager player)
+        {
+            if (!Pause.IsOpen) player.OpenMenu(Pause);
+        }
+
         public void ExitGame()
         {
             Time.timeScale = 1;
