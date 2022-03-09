@@ -18,29 +18,25 @@ namespace JekyllHyde.Entity.Player.Mechanics
         [field: SerializeField] private DialogManager DialogManager { get; set; }
 
         private IInteractable InteractiveObject = null;
-        private bool Interacting = false;
 
-        private void FixedUpdate()
+        private void Update()
         {
-            if (IsInteracting(out bool alternativeKey) && EnabledInteract && !Interacting && InteractiveObject != null)
+            if (IsInteracting(out bool alternativeKey))
             {
-                Debug.Log($"PlayerInteract: Triggering interact... (Alternative key? {alternativeKey})");
+                if (EnabledInteract && InteractiveObject != null)
+                {
+                    Debug.Log($"PlayerInteract: Triggering interact... (Alternative key? {alternativeKey})");
 
-                Interacting = true;
-
-                if (InteractiveObject.MinimumStep <= QuestManager.Step) InteractiveObject.Interact(this, alternativeKey);
-                else DialogManager.Show("Nao tenho nada para ver aqui agora", 0.5f, 0.4f);
-            }
-            else if (!IsInteracting(out _) && Interacting)
-            {
-                Interacting = false;
+                    if (InteractiveObject.MinimumStep <= QuestManager.Step) InteractiveObject.Interact(this, alternativeKey);
+                    else DialogManager.Show("Nao tenho nada para ver aqui agora", 0.5f, 0.4f);
+                }
             }
         }
 
         private bool IsInteracting(out bool alternativeKey)
         {
-            bool normalKey = Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Return);
-            bool altKey = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);
+            bool normalKey = Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Return);
+            bool altKey = Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow);
 
             if (!normalKey) alternativeKey = altKey;
             else alternativeKey = false;
