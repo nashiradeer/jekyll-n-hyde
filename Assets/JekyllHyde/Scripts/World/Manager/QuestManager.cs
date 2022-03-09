@@ -29,6 +29,10 @@ namespace JekyllHyde.World.Manager
         [field: SerializeField] private GameObject PlayerLight { get; set; }
         [field: SerializeField] private List<string> StepDescriptions { get; set; }
 
+#if DEBUG
+        [field: SerializeField] private int StartStep { get; set; }
+#endif
+
         public static int Step { get; set; }
 
         private bool TriggerLocked { get; set; }
@@ -222,6 +226,10 @@ namespace JekyllHyde.World.Manager
 
         private void Start()
         {
+#if DEBUG
+            Step = StartStep;
+#endif
+
             GameUpdate();
         }
     }
