@@ -18,7 +18,7 @@ namespace JekyllHyde.Entity.Player.Mechanics
 
         private void Update()
         {
-            if (EnabledMovement) Body.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Body.velocity.y);
+            if (EnabledMovement) Body.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * Speed, Body.velocity.y);
             else Body.velocity = new Vector2(0, Body.velocity.y);
 
             Moving = Body.velocity.x != 0;
