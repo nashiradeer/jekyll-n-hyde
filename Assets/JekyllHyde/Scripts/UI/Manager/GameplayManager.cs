@@ -23,6 +23,11 @@ namespace JekyllHyde.UI.Manager
         private PauseMenu Pause { get; set; }
         private bool GameOver { get; set; }
 
+        public bool IsPaused
+        {
+            get => Pause != null && Pause.IsOpen;
+        }
+
         public void TriggerGameOver()
         {
             if (!GameOver)

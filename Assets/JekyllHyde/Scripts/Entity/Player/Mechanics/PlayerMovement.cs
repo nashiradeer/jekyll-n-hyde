@@ -1,4 +1,5 @@
 ﻿using JekyllHyde.Entity.Player.World;
+using JekyllHyde.UI.Manager;
 using JekyllHyde.World.Manager;
 using UnityEngine;
 
@@ -13,11 +14,14 @@ namespace JekyllHyde.Entity.Player.Mechanics
         [field: SerializeField] private PlayerAudio Audio { get; set; }
         [field: SerializeField] private WorldManager WorldManager { get; set; }
         [field: SerializeField] private QuestManager QuestManager { get; set; }
+        [field: SerializeField] private GameplayManager GameplayManager { get; set; }
 
         public bool Moving { get; set; }
 
         private void Update()
         {
+            if (GameplayManager.IsPaused) return;
+
             if (EnabledMovement) Body.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * Speed, Body.velocity.y);
             else Body.velocity = new Vector2(0, Body.velocity.y);
 

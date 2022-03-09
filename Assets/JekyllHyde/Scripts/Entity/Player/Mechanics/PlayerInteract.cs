@@ -14,13 +14,14 @@ namespace JekyllHyde.Entity.Player.Mechanics
         [field: SerializeField] public KeypadController Keypad1 { get; set; }
         [field: SerializeField] public KeypadController Keypad2 { get; set; }
 
-        [field: SerializeField] private QuestManager QuestManager { get; set; }
         [field: SerializeField] private DialogManager DialogManager { get; set; }
 
         private IInteractable InteractiveObject = null;
 
         private void Update()
         {
+            if (Manager.GameplayManager.IsPaused) return;
+
             if (IsInteracting(out bool alternativeKey))
             {
                 if (EnabledInteract && InteractiveObject != null)

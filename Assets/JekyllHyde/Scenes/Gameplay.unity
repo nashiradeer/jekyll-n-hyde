@@ -1621,8 +1621,6 @@ MonoBehaviour:
   <PauseScreen>k__BackingField: {fileID: 2000908799}
   <GameOverScreen>k__BackingField: {fileID: 1254616789}
   <PlayerAudio>k__BackingField: {fileID: 1674339741}
-  <Keypad1>k__BackingField: {fileID: 1486773578}
-  <Keypad2>k__BackingField: {fileID: 1877466434}
   <MenuButton>k__BackingField: {fileID: 20345352}
   <PlayerDie>k__BackingField: {fileID: 1264790498}
   <Music>k__BackingField: {fileID: 1264790497}
@@ -2950,6 +2948,7 @@ MonoBehaviour:
   - Verifique Lucy na sala
   - Saia da casa pela porta da cozinha
   - Encontre uma maneira de fugir
+  <StartStep>k__BackingField: 0
 --- !u!4 &1614449482
 Transform:
   m_ObjectHideFlags: 0
@@ -4878,7 +4877,6 @@ MonoBehaviour:
   <EnabledInteract>k__BackingField: 0
   <Keypad1>k__BackingField: {fileID: 1486773578}
   <Keypad2>k__BackingField: {fileID: 1877466434}
-  <QuestManager>k__BackingField: {fileID: 1614449481}
   <DialogManager>k__BackingField: {fileID: 1882010414}
 --- !u!1 &8636627726518754528
 GameObject:
@@ -5016,6 +5014,7 @@ MonoBehaviour:
   <Audio>k__BackingField: {fileID: 1674339741}
   <WorldManager>k__BackingField: {fileID: 1897543284}
   <QuestManager>k__BackingField: {fileID: 1614449481}
+  <GameplayManager>k__BackingField: {fileID: 1032869452}
 --- !u!4 &8636627727337990041
 Transform:
   m_ObjectHideFlags: 0
@@ -5108,6 +5107,7 @@ MonoBehaviour:
   <Movement>k__BackingField: {fileID: 8636627727337990040}
   <Sprite>k__BackingField: {fileID: 8636627726518754543}
   <Audio>k__BackingField: {fileID: 1674339741}
+  <GameplayManager>k__BackingField: {fileID: 1032869452}
 --- !u!61 &8636627727337990054
 BoxCollider2D:
   m_ObjectHideFlags: 0

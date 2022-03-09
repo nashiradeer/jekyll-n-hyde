@@ -1,4 +1,5 @@
 using JekyllHyde.Entity.Player.World;
+using JekyllHyde.UI.Manager;
 using UnityEngine;
 
 namespace JekyllHyde.Entity.Player.Mechanics
@@ -9,6 +10,7 @@ namespace JekyllHyde.Entity.Player.Mechanics
         [field: SerializeField] private PlayerMovement Movement { get; set; }
         [field: SerializeField] private PlayerSprite Sprite { get; set; }
         [field: SerializeField] private PlayerAudio Audio { get; set; }
+        [field: SerializeField] private GameplayManager GameplayManager { get; set; }
 
         public bool IsHidden { get; private set; }
 
@@ -19,6 +21,8 @@ namespace JekyllHyde.Entity.Player.Mechanics
 
         private void Update()
         {
+            if (GameplayManager.IsPaused) return;
+
             if (Cooldown > 0 && !IsHidden) Cooldown -= Time.deltaTime;
 
             if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))

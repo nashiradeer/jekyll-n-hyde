@@ -7,7 +7,7 @@ namespace JekyllHyde.Entity.Player.Manager
 {
     public class PlayerManager : MonoBehaviour
     {
-        [field: SerializeField] private GameplayManager GameplayManager { get; set; }
+        [field: SerializeField] public GameplayManager GameplayManager { get; set; }
 
         [field: SerializeField] public DialogManager DialogManager { get; set; }
         [field: SerializeField] public PlayerMovement Movement { get; set; }
