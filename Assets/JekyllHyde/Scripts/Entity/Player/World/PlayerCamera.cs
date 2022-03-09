@@ -9,20 +9,9 @@ namespace JekyllHyde.Entity.Player.World
         [field: SerializeField] public float RightX { get; set; }
         [field: SerializeField] public float CameraY { get; set; }
 
-        private void FixedUpdate()
+        private void LateUpdate()
         {
-            if (LeftX != RightX && Player.position.x > RightX && Player.position.x < LeftX)
-            {
-                transform.position = new Vector3(Player.position.x, CameraY, transform.position.z);
-            }
-            else if (LeftX != RightX && Player.position.x < RightX)
-            {
-                transform.position = new Vector3(RightX, CameraY, transform.position.z);
-            }
-            else if (LeftX != RightX && Player.position.x > LeftX)
-            {
-                transform.position = new Vector3(LeftX, CameraY, transform.position.z);
-            }
+            transform.position = new Vector3(Mathf.Clamp(Player.position.x, RightX, LeftX), CameraY, transform.position.z);
         }
     }
 }
