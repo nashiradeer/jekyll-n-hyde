@@ -24,7 +24,7 @@ namespace JekyllHyde.Entity.Player.World
             Animator.SetBool("Moving", moving);
         }
 
-        protected void Start()
+        private void Start()
         {
             if (CurrentDirection != EntityDirection.Left)
             {
