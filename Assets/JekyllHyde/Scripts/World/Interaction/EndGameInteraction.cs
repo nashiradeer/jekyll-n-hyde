@@ -1,5 +1,4 @@
-﻿using JekyllHyde.Entity.Player.Manager;
-using JekyllHyde.Entity.Player.Mechanics;
+﻿using JekyllHyde.Entity.Player.Mechanics;
 using JekyllHyde.World.Manager;
 using UnityEngine;
 
