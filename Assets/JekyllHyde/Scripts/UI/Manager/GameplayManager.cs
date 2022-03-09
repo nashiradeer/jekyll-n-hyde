@@ -112,6 +112,9 @@ namespace JekyllHyde.UI.Manager
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
 
+                CurrentPlayer.Mechanics(true);
+                CurrentPlayer = null;
+
                 GameplayManager.GameplayScreen.SetActive(true);
                 GameplayManager.PauseScreen.SetActive(false);
             }
@@ -121,6 +124,7 @@ namespace JekyllHyde.UI.Manager
                 if (IsOpen) return;
 
                 IsOpen = true;
+                player.Mechanics(false);
                 CurrentPlayer = player;
 
                 GameplayManager.PlayerAudio.EnableSound = false;
