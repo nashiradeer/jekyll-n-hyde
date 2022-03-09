@@ -29,7 +29,8 @@ namespace JekyllHyde.World.Interaction
                 {
                     KeypadController keypad = (!UseAlternativeKeypad) ? player.Keypad1 : player.Keypad2;
                     keypad.OnKeyCorrected.AddListener(LoadWorld);
-                    keypad.Open(Password);
+                    keypad.Init(Password);
+                    player.Manager.OpenMenu(keypad);
                 }
             }
         }

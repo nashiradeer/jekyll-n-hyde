@@ -6,29 +6,35 @@ using UnityEngine.UI;
 
 namespace JekyllHyde.UI
 {
-    public class KeypadController : MonoBehaviour
+    public class KeypadController : MonoBehaviour, IUIMenu
     {
         [field: SerializeField] private Image KeypadUI { get; set; }
         [field: SerializeField] private Sprite Default { get; set; }
         [field: SerializeField] private Sprite Correct { get; set; }
-        [field: SerializeField] private PlayerManager PlayerManager { get; set; }
 
         private bool DisableWrite { get; set; }
         private string CorrectKey { get; set; }
         private string CurrentKey { get; set; }
-        public bool KeypadEnabled { get; set; }
+
+        public PlayerManager CurrentPlayer { get; private set; }
+        public bool IsOpen { get; private set; }
 
         public UnityEvent OnKeyCorrected = new UnityEvent();
 
-        public void Open(string correctKey)
+        public void Init(string correctKey)
         {
-            if (KeypadEnabled) return;
-            PlayerManager.Mechanics(false);
-
             CorrectKey = correctKey;
+        }
+
+        public void Open(PlayerManager player)
+        {
+            if (IsOpen) return;
+
+            player.Mechanics(false);
+            CurrentPlayer = player;
 
             DisableWrite = false;
-            KeypadEnabled = true;
+            IsOpen = true;
 
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
@@ -38,14 +44,16 @@ namespace JekyllHyde.UI
 
         public void Close()
         {
-            if (!KeypadEnabled) return;
+            if (!IsOpen) return;
+
             OnKeyCorrected.RemoveAllListeners();
-            KeypadEnabled = false;
+            IsOpen = false;
 
             CorrectKey = "";
             CurrentKey = "";
 
-            PlayerManager.Mechanics(true);
+            CurrentPlayer.Mechanics(true);
+            CurrentPlayer = null;
 
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -55,7 +63,7 @@ namespace JekyllHyde.UI
 
         public void Write(string code)
         {
-            if (!KeypadEnabled && !DisableWrite) return;
+            if (!IsOpen && !DisableWrite) return;
 
             string newKey = CurrentKey += code;
             Debug.Log($"KeypadController: Write requested, result {newKey}.");
@@ -82,13 +90,8 @@ namespace JekyllHyde.UI
 
             OnKeyCorrected.Invoke();
             KeypadUI.sprite = Default;
-
-            Close();
-        }
-
-        private void Update()
-        {
-            if (Input.GetKey(KeyCode.Escape) && KeypadEnabled) Close();
+            
+            CurrentPlayer.CloseMenu();
         }
     }
 }

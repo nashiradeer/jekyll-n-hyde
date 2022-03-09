@@ -1,3 +1,4 @@
+using JekyllHyde.Entity.Player.Manager;
 using JekyllHyde.Entity.Player.Mechanics;
 using JekyllHyde.Entity.Player.World;
 using JekyllHyde.World.Manager;
@@ -21,10 +22,8 @@ namespace JekyllHyde.UI.Manager
         [field: SerializeField] private AudioSource PlayerDie { get; set; }
         [field: SerializeField] private AudioSource Music { get; set; }
 
-        private bool Paused { get; set; }
+        private PauseMenu Pause { get; set; }
         private bool GameOver { get; set; }
-
-        private bool PausePressed { get; set; }
 
         public void TriggerGameOver()
         {
@@ -60,20 +59,7 @@ namespace JekyllHyde.UI.Manager
 
         public void ResumeGame()
         {
-            if (Paused)
-            {
-                Paused = false;
-                
-                PlayerAudio.EnableSound = true;
-
-                Time.timeScale = 1;
-
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-
-                GameplayScreen.SetActive(true);
-                PauseScreen.SetActive(false);
-            }
+            if (Pause.IsOpen) Pause.CurrentPlayer.CloseMenu();
         }
 
         public void ExitGame()
@@ -86,45 +72,63 @@ namespace JekyllHyde.UI.Manager
             SceneManager.LoadScene(1);
         }
 
-        private void Update()
+        private void Awake()
         {
-            if (Input.GetKey(KeyCode.Escape) && !PausePressed)
+            Pause = new PauseMenu(this);
+        }
+
+        private class PauseMenu : IUIMenu
+        {
+            public bool IsOpen { get; set; }
+            public PlayerManager CurrentPlayer { get; set; }
+
+            private GameplayManager GameplayManager { get; set; }
+
+            public PauseMenu(GameplayManager gameplayManager)
             {
-                PausePressed = true;
-                if (Paused)
-                {
-                    Paused = false;
-
-                    PlayerAudio.EnableSound = true;
-
-                    Time.timeScale = 1;
-
-                    Cursor.lockState = CursorLockMode.Locked;
-                    Cursor.visible = false;
-
-                    GameplayScreen.SetActive(true);
-                    PauseScreen.SetActive(false);
-                }
-                else
-                {
-                    if (EnabledPause && !Keypad1.KeypadEnabled && !Keypad2.KeypadEnabled)
-                    {
-                        Paused = true;
-
-                        PlayerAudio.EnableSound = false;
-                        PlayerAudio.StopWalk();
-
-                        Time.timeScale = 0;
-
-                        Cursor.lockState = CursorLockMode.Confined;
-                        Cursor.visible = true;
-
-                        GameplayScreen.SetActive(false);
-                        PauseScreen.SetActive(true);
-                    }
-                }
+                GameplayManager = gameplayManager;
             }
-            else if (!Input.GetKey(KeyCode.Escape) && PausePressed) PausePressed = false;
+
+            public void Resume()
+            {
+                CurrentPlayer.CloseMenu();
+            }
+
+            public void Close()
+            {
+                if (!IsOpen) return;
+
+                IsOpen = false;
+
+                GameplayManager.PlayerAudio.EnableSound = true;
+
+                Time.timeScale = 1;
+
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+
+                GameplayManager.GameplayScreen.SetActive(true);
+                GameplayManager.PauseScreen.SetActive(false);
+            }
+
+            public void Open(PlayerManager player)
+            {
+                if (IsOpen) return;
+
+                IsOpen = true;
+                CurrentPlayer = player;
+
+                GameplayManager.PlayerAudio.EnableSound = false;
+                GameplayManager.PlayerAudio.StopWalk();
+
+                Time.timeScale = 0;
+
+                Cursor.lockState = CursorLockMode.Confined;
+                Cursor.visible = true;
+
+                GameplayManager.GameplayScreen.SetActive(false);
+                GameplayManager.PauseScreen.SetActive(true);
+            }
         }
     }
 }
