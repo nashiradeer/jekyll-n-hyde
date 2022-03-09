@@ -16,8 +16,6 @@ namespace JekyllHyde.UI.Manager
         [field: SerializeField] private GameObject PauseScreen { get; set; }
         [field: SerializeField] private GameObject GameOverScreen { get; set; }
         [field: SerializeField] private PlayerAudio PlayerAudio { get; set; }
-        [field: SerializeField] private KeypadController Keypad1 { get; set; }
-        [field: SerializeField] private KeypadController Keypad2 { get; set; }
         [field: SerializeField] private GameObject MenuButton { get; set; }
         [field: SerializeField] private AudioSource PlayerDie { get; set; }
         [field: SerializeField] private AudioSource Music { get; set; }
@@ -104,6 +102,7 @@ namespace JekyllHyde.UI.Manager
                 if (!IsOpen) return;
 
                 IsOpen = false;
+                CurrentPlayer = null;
 
                 GameplayManager.PlayerAudio.EnableSound = true;
 
@@ -111,9 +110,6 @@ namespace JekyllHyde.UI.Manager
 
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
-
-                CurrentPlayer.Mechanics(true);
-                CurrentPlayer = null;
 
                 GameplayManager.GameplayScreen.SetActive(true);
                 GameplayManager.PauseScreen.SetActive(false);
@@ -124,7 +120,6 @@ namespace JekyllHyde.UI.Manager
                 if (IsOpen) return;
 
                 IsOpen = true;
-                player.Mechanics(false);
                 CurrentPlayer = player;
 
                 GameplayManager.PlayerAudio.EnableSound = false;
