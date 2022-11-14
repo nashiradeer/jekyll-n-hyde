@@ -4,7 +4,7 @@
 
 | Version       | Supported          |
 | :------------ | ------------------ |
-| 0.0.1-alpha.x | :white_check_mark: |
+| 0.0.1-alpha.x | :x: |
 
 ## Supported Unity Versions
 
